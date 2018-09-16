@@ -1,0 +1,357 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\newtheorem{example}{例子}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注}
+\let\oldref\ref
+\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{CJK}{UTF8}{gbsn}
+\begin{document}
+\title{函数列与函数项级数}
+\author{武国宁}
+\date{}
+\maketitle
+
+\section{一致收敛}
+\subsection{函数列及其一致收敛性}
+设
+\begin{equation}
+    f_1, f_2, \cdots, f_n, \cdots
+    \label{eq:eq1}
+\end{equation}
+是一列定义在同一数集$E$上的函数，称为定义在$E$上的函数列，记为：
+\[
+    \left\{f_n\right\}
+\]
+设$x_0 \in E$，得到数列：
+\begin{equation}
+    \left\{ f(x_0) \right\} 
+    \label{eq:eq2}
+\end{equation}
+收敛，则称数列\ref{eq:eq1}在$x_0$点收敛，$x_0$称为数列\ref{eq:eq1}的收敛点。
+若数列\ref{eq:eq2}发散，则称函数列\ref{eq:eq1}在$x_0$点发散。若数列\ref{eq:eq1}
+在$D \subset E$上的每一点都收敛，则称\ref{eq:eq1}在数集$D$上收敛。这是对于
+$\forall x \in D$，都有数列$\left\{f_n(x)\right\}$ 的一个极限值与之对应，由这个对应法则所确定
+的$D$上的函数，成为函数列\ref{eq:eq1}的极限函数。若把此极限函数记作$f(x)$，
+则有：
+\[
+    \lim_{n \to \infty} f_n(x) = f(x), \forall x \in D
+    \]
+\begin{remark}
+    函数极限的$\epsilon - N$ 定义是：对于每一个$x \in D$，$\displaystyle \forall x \in D,
+    \exists N > 0, \forall n > N, s.t. \left| f_n(x) - f(x) \right| < \epsilon.$
+\end{remark}
+\begin{remark}
+    使得函数$\left\{ f_n(x) \right\}$收敛的全体收敛点的集合，成为函数列$\left\{f_n(x)\right\}$的收敛域。
+\end{remark}
+
+\begin{example}
+    讨论函数列$\left\{f_n(x) = x^n\right\}$的收敛域与极限函数。
+\end{example}
+
+\begin{example}
+    讨论函数列$f_n(x) = \frac{\sin nx}{n}$的收敛域与极限函数。
+\end{example}
+
+\begin{definition}
+    设函数列$f_n(x)$与函数$f(x)$定义在同一数集$D$上，若对于任给的正数
+    $\epsilon > 0$，总存在某一个正整数$N > 0$， 使得当$n > N$ 时， 对于一切
+    $x \in D$ ，都有：
+    \[
+        \left|f_n(x) - f(x)\right| < \epsilon,
+        \]
+    则称函数列$\left\{f_n(x)\right\}$在$D$上\textbf{一致收敛}于$f(x)$，记作：
+    \[
+        f_n(x) \rightrightarrows f(x), x \in D
+        \]
+\end{definition}
+
+\begin{theorem}{\rm 函数列一致收敛的柯西准则}
+    函数列$f_n(x)$在数集$D$上一致收敛的充分必要条件为：
+    对于任给的$\epsilon > 0$ ，总存在正整数$N > 0$， 使得当
+    $n, m > N$时，对于一切$x \in D$ 都有：
+    \begin{equation}
+        \left|f_n(x) - f_m(x) \right| < \epsilon.
+    \end{equation}
+\end{theorem}
+
+\begin{theorem}
+    函数列$\left\{f_n(x)\right\}$在$D$上一致收敛于$f$的充分必要条件是：
+    \begin{equation}
+        \lim_{n \to \infty} \sup_{x \in D}\left|f_n(x) - f(x)\right| = 0
+        \label{eq:eq3}
+    \end{equation}
+\end{theorem}
+
+\begin{corollary}
+    函数列$\left\{f_n(x)\right\}$在$D$上不一致收敛于$f(x)$的充分且必要条件为：
+    存在$\left\{x_n\right\} \subset D$，使得$\left\{f_n(x_n) - f(x_n)\right\}$不收敛于0.
+\end{corollary}
+
+\begin{example}
+    讨论函数列$\left\{f_n(x) = nxe^{-nx^2}\right\}, x \in (0, +\infty)$的一致敛散性。
+\end{example}
+
+\begin{definition}
+    设函数列$\left\{f_n(x)\right\}$与$f(x)$定义在区间$I$上，多对于任意闭区间$[a,b] \subset I$，
+    $\left\{f_n(x)\right\}$在$[a,b]$上一致收敛于$f(x)$，则称$\left\{f_n(x)\right\}$在$I$上内闭一致收敛
+    于$f$.
+\end{definition}
+
+\subsection{函数项级数及其一致收敛性}
+设$\left\{u_n(x)\right\}$是定义在数集$E$上的一个函数列，表达式：
+\begin{equation}
+    u_1(x) + u_2(x) + \cdots + u_n(x) + \cdots, x \in E
+    \label{eq:eq4}
+\end{equation}
+称为定义在$E$上的函数项级数，记为$\displaystyle \sum_{n=1}^{\infty}u_n(x)$，
+称
+\begin{equation}
+    S_n(x) = \sum_{k=1}^n u_k(x), x \in E, n = 1, 2, \cdots,
+    \label{eq:eq5}
+\end{equation}
+为函数项级数\ref{eq:eq4}的部分和数列。
+若$x_0 \in E$，数项级数：
+\begin{equation}
+    u_1(x_0) + u_2(x_0) + \cdots + u_n(x_0) + \cdots 
+    \label{eq:eq6}
+\end{equation}
+收敛，则称$x_0$为函数项级数\ref{eq:eq4}的收敛点。所有的收敛点形成收敛域。
+在收敛域上，级数\ref{eq:eq4}对应和函数，并写作：
+\[
+    u_1(x) + u_2(x) + \cdots + u_n(x) + \cdots = S(x), x \in D
+    \]
+\begin{example}
+    讨论几何级数$\displaystyle \sum_{n=1}^{\infty}x^n$的收敛域。
+\end{example}
+
+\begin{definition}
+    设$\left\{S_n(x)\right\}$是函数项级数$\displaystyle \sum_{n=1}^{\infty}u_n(x)$的部分和函数列。
+    若$\left\{S_n(x)\right\}$在数集$D$上一致收敛于$S(x)$， 则称级数$\sum u_n(x)$在$D$上一致收敛于
+    $S(x)$，若$\displaystyle \sum u_n(x)$在任意闭区间$[a,b] \subset I$上一致收敛，则称
+    $\displaystyle \sum u_n(x)$在$I$上内闭一致收敛。
+\end{definition}
+\begin{theorem}
+    函数项级数$\displaystyle \sum u_n(x)$在数集$D$上一致收敛的充分必要条件为：
+    对于任意给定的正数 $\epsilon$，总存在某个正整数$N$， 使得当$n > N$时，对于一切
+    $x \in D$ 和一切正整数$q$，都有：
+    \[
+        \left|S_{n+p}(x) - S_n(x)\right| < \epsilon
+        \]
+\end{theorem}
+
+\begin{corollary}
+    函数项级数$\displaystyle \sum u_n(x)$ 在数集$D$上一致收敛的必要条件为
+    函数列$\displaystyle \left\{u_n(x)\right\}$在$D$上一致收敛于零。
+\end{corollary}
+
+设函数项级数$\displaystyle \sum u_n(x)$在$D$上的和函数为$S(x)$， 则称
+\[
+    R_n(x) = S(x) - S_n(x)
+    \]
+为函数项级数$\displaystyle \sum u_n(x)$的\textbf{余项}。
+
+\begin{theorem}
+    函数项级数$\displaystyle \sum u_n(x)$在数集$D$上一致收敛于$S(x)$的充分必要
+    条件为：
+    \[
+        \lim_{n \to \infty}\sup_{x \in D} \left|R_n(x)\right| = 
+        \lim_{n \to \infty}\sup_{x \in D} \left|S(x) - S_n(x)\right| = 0
+        \]
+\end{theorem}
+
+\begin{example}
+    讨论函数项级数$\displaystyle \sum_{n=0}^{\infty}x^n$的一致收敛性。
+\end{example}
+
+\subsection{函数项级数一致收敛性的判别方法}
+\begin{theorem}{\rm (威尔斯特拉斯判别法)}
+    设函数项级数$\displaystyle \sum u_n(x)$定义在数集$D$上，$\displaystyle \sum M_n$
+    为收敛的正项级数，若对于一切$x \in D$，有：
+    \begin{equation}
+        \left|u_n(x)\right| \le M_n, n = 1, 2, \cdots,
+        \label{eq:eq7}
+    \end{equation}
+    则函数项级数$\displaystyle \sum u_n(x)$在$D$上一致收敛。
+\end{theorem}
+
+\begin{example}
+    讨论函数项级数
+    \[
+        \sum \frac{\sin nx}{n^2}, \sum \frac{\cos nx}{n^2}
+        \]
+    在$\displaystyle \left(-\infty, +\infty\right)$的一致收敛性。
+\end{example}
+
+\begin{remark}
+    上述级数$\displaystyle \sum M_n$称为函数项级数$\displaystyle \sum u_n(x)$的优级数。
+    上述判别方法成为\textbf{M}判别法或优级数判别法。
+\end{remark}
+
+下面讨论形如
+\begin{equation}
+    \sum u_n(x)v_n(x)
+    \label{eq:eq8}
+\end{equation}
+\begin{theorem}{\rm(阿贝尔判别法)}设
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $\displaystyle \sum u_n(x)$ 在区间$I$上一致收敛；
+        \item 对于每一个$x \in I, \left\{v_n(x)\right\}$是单调的；
+        \item $\displaystyle \left\{v_n(x)\right\}$在$I$上一致有界，即存在正数$M$，
+            对于一切$x \in I$ 和正整数$n$，有
+            \[
+                \left|v_n(x)\right| \le M,
+                \]
+            则级数\ref{eq:eq8}一致收敛。
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}{\rm(狄利克雷判别法)}设
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $\displaystyle \sum u_n(x)$的部分和函数列
+            \[
+                U_n(x) = \sum_{n=1}^{\infty} u_k(x) (n = 1, 2, \cdots,)
+                \]
+            在$I$上一致有界；
+        \item 对于每一个$x \in I, \left\{v_n(x)\right\}$是单调的；
+        \item 在$I$上$\displaystyle v_n(x) \rightrightarrows 0(n \to \infty)$
+            则级数\ref{eq:eq8}一致收敛。
+    \end{enumerate}
+\end{theorem}
+
+\begin{example}
+    讨论函数项级数
+    \[
+        \sum \frac{(-1)^n(x+n)^n}{n^{n+1}}
+        \]
+    在$[0,1]$上的一致敛散性。
+\end{example}
+
+\begin{example}
+    若数列$\displaystyle \left\{a_n\right\}$单调且收敛于零，则级数
+    \[
+        \sum a_n \cos nx
+        \]
+    在$[\alpha, 2\pi-\alpha](0 < \alpha < \pi)$上的一致敛散性。
+\end{example}
+
+\subsection{作业}
+\subsubsection{讨论下列函数列在所示区间上是否一致收敛或内闭一致收敛，说明理由}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle f_n(x) = \frac{x}{1 + n^2x^2}, n = 1,2, \cdots, D \in (-\infty, +\infty)$
+    \item $\displaystyle f_n(x) = \left\{\begin{array}{cl} 
+             -(n+1)x+1, & 0 \le x \le \frac{1}{n+1}, \\
+             0        , & \frac{1}{n+1} < x <1. 
+            \end{array} \right.$
+          $\displaystyle n = 1,2, \cdots$
+      \item $\displaystyle f_n(x) = \sin \frac{x}{n}, n = 1, 2, \cdots,
+          D \in \left(-\infty, +\infty\right)$
+\end{enumerate}
+
+\subsubsection{判别下列函数项级数在所示区间上的一致收敛性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{x^n}{n+1}, x \in [-r, r]$
+    \item $\displaystyle \sum \frac{(-1)^{n-1}x^2}{(1+x^2)^n}, x \in 
+        \left(-\infty, +\infty\right)$
+    \item $\displaystyle \sum \frac{x^n}{n^2}, x \in [0,1]$
+    \item $\displaystyle \sum \frac{x^2}{(1+x^2)^{n-1}}, x \in 
+        \left(-\infty, +\infty\right)$
+\end{enumerate}
+\subsubsection{证明题}
+证明：$\displaystyle f_n(x)$在区间$I$上内闭一致收敛于$f$的充分且必要条件是：
+对于任意$x_0 \in I$，存在$x_0$的一个邻域$\displaystyle U(x_0)$，使得
+$\displaystyle \left\{f_n(x)\right\}$在$\displaystyle U(x_0) \cap I$上一致收敛于$f$.
+
+\section{一致收敛函数列于函数项级数的性质}
+\begin{theorem}
+    设函数列$\displaystyle f_n$在$(a,x_0) \cup (x_0, b)$上一致收敛于$f(x)$，且
+    对每一个$ \displaystyle n, \lim_{x \to x_0}f_n(x) = a_n$，
+    则$\displaystyle \lim_{n \to \infty} a_n$
+    和$\lim_{x \to x_0}f(x)$均存在且相等。
+\end{theorem}
+
+\begin{remark}
+    上述定理说明：
+    \begin{equation}
+        \lim_{n \to \infty}\lim_{x \to x_0}f_n(x) = \lim_{x \to x_0}\lim_{n \to \infty}f_n(x)
+        \label{eq:eq9}
+    \end{equation}
+\end{remark}
+\begin{remark}
+    类似的，若函数$\displaystyle f_n(x)$在$(a,b)$上一致收敛且
+    $\displaystyle \lim_{x \to a^+}f_n(x)$存在，可得到：
+    \[
+        \lim_{n \to \infty}\lim_{x \to a^+}f_n(x) = \lim_{x \to a^+}\lim_{n \to \infty}f_n(x)
+        \]
+\end{remark}
+\begin{remark}
+    类似的，若函数$\displaystyle f_n(x)$在$(a,b)$上一致收敛且
+    $\displaystyle \lim_{x \to b^-}f_n(x)$存在，可得到：
+    \[
+        \lim_{n \to \infty}\lim_{x \to b^-}f_n(x) = \lim_{x \to b^-}\lim_{n \to \infty}f_n(x)
+        \]
+\end{remark}
+
+\begin{theorem}{\rm (连续性)}
+    若函数列$\displaystyle \left\{f_n(x)\right\}$在区间$I$上一致连续，且每一项都连续，
+    则其极限函数$f$在$I$上连续。
+\end{theorem}
+
+\begin{example}
+    例如函数列$\displaystyle \left\{x^n\right\}$各项在$(-1, 1]$上连续，但是极限函数为：
+     \[
+         f(x) = \left\{\begin{array}{ll} 0, & -1 < x < 1, \\
+                                   1, & x = 1 
+                 \end{array}\right.
+                 \]
+             说明该函数列在$(-1,1])$上不一致收敛。
+\end{example}
+
+\begin{corollary}
+    若连续函数列$\left\{f_n\right\}$在区间$I$上内闭一致收敛于$f$，则$f$在$I$上连续。
+\end{corollary}
+
+\begin{example}
+    例如函数列$\displaystyle \left\{x^n\right\}$各项在$(-1, 1)$上连续，内闭一致收敛
+    于$f$，则 $f$ 在$I$上连续。
+\end{example}
+
+\begin{theorem}{\rm (可积性)}
+    若函数列$\left\{f_n\right\}$在$[a,b]$上一致收敛，且每一项都连续，则有：
+    \begin{equation}
+        \int_a^b\lim_{n \to \infty}f_n(x)\,\rm{d}x = 
+        \lim_{n \to \infty}\int_a^bf_n(x)\,\rm{d}x
+        \label{eq:eq10}
+    \end{equation}
+\end{theorem}
+
+
+\begin{example}
+    讨论函数
+    \[
+        f_n(x) = \left\{\begin{array}{ll} 2n\alpha_nx,& 0 \le x < \frac{1}{2n} \\
+                        2\alpha_n - 2n\alpha_nx, & \frac{1}{2n} \le x < \frac{1}{n} \\
+                        0,           & \frac{1}{n} \le x \le 1
+        \end{array}\right.
+    \]
+    的一致收敛及其极限函数的可积性。
+\end{example}
+
+\end{CJK}
+\end{document}

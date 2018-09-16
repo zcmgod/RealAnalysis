@@ -1,0 +1,126 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\bfseries real analysis 2017}
+\lfoot{Real analysis}
+\cfoot{China University of Petroleum-Beijing}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand\thesection{\Roman{section}}
+\begin{CJK}{UTF8}{gbsn}
+\begin{document}
+\title{\huge\textbf{中国石油大学(北京)}\vskip 1.0cm
+\textbf{《数学分析》2017-2018-1\\期中考试题}}
+%\author{someone}
+\date{}
+\maketitle
+
+    \begin{center}
+    \begin{table}[!hbpt]
+        \begin{tabular}{|p{2cm}|*{7}{|p{1.2cm}|}|p{2cm}|}
+            \hline
+            {\Large\textbf{题目}} & \huge\textbf{一} & \huge\textbf{二}&\huge\textbf{三}&\huge\textbf{四}&\huge\textbf{五}&\huge\textbf{六}&\huge\textbf{七}&\huge\textbf{总分}\\
+            \hline
+            \multirow{3}{*}{\Large\textbf{得分}} &    &    &    &    &    &    &    &      \\
+                                                &    &    &    &    &    &    &    &      \\
+                                                &    &    &    &    &    &    &    &      \\
+            \hline
+        \end{tabular}
+    \end{table} 
+    \huge
+    \vskip 1cm 
+    班级\underline{\hbox to 50mm{}}\\ \vskip 1.5cm 
+    姓名\underline{\hbox to 50mm{}}\\ \vskip 1.5cm
+    学号\underline{\hbox to 50mm{}}\\ \vskip 1.5cm
+    \end{center}\newpage
+
+    \begin{spacing}{2.0}
+    \section{填空题(每题3分,共15分)}
+    \begin{enumerate}[(1)]
+        \item $\displaystyle \lim_{x \to x_0}f(x) \ne A$的定义描述为\underline{\hbox to 70mm{}}。
+        \item 设$f(x)$在0点可导，则$\displaystyle \lim_{h\rightarrow 0}\frac{f(1-\cos h)-f(0)}{h^2}$
+            = \underline{\hbox to 30mm{}}。
+        \item 函数$y=\textbf{sgn}(\sin x)$的间断点为\underline{\hbox to 30mm{}}。
+        \item 若 $\displaystyle \lim_{x\rightarrow \infty} \left(\frac{x+a}{x-a}\right)^x=9$，则$a$=\underline{\hbox to 30mm{}}。
+    \item 若函数$\displaystyle f(x) = \left\{ \begin{array}{rcl} \left(\cos x\right)^{-x^2}, &x\neq 0 \\ a, & x=0 \end{array} \right.$在$x=0$处连续，则$a=$\underline{\hbox to 30mm{}}。
+    \end{enumerate}
+    
+    \section{选择题(每题3分,共15分)}
+    \begin{enumerate}[(1)]
+        \item 设$f(x)$在$x=a$处连续，$\psi(x)$在$x=a$处间断，又$f(a)\neq0$，则( )\\
+            (A) $\psi[f(x)]$在$x=a$处间断. \hspace{1cm} (B) $f[\psi(x)]$在$x=a$处间断.\\ 
+            (C) $\psi^2(x)$在$x=a$处间断. \hspace{1.5cm} (D) $\displaystyle \frac{\psi(x)}{f(x)}$在$x=a$处间断. 
+        \item 当$n\rightarrow +\infty$时，$\displaystyle \left(1+\frac{1}{n}\right)^n-e$
+            是$\displaystyle \frac{1}{n}$的(\hspace{0.5cm}) \\
+            (A) 高阶无穷小. \hspace{1.5cm} (B) 低阶无穷小. \\
+            (C) 等价无穷小. \hspace{1.5cm} (D) 同阶但非等价无穷小.  
+        \item 若$\displaystyle \lim_{n\rightarrow +\infty}x_ny_n=0$，
+            则下列正确的是(\hspace{0.5cm})\\
+            (A) 若$x_n$发散，则$y_n$必收敛. \hspace{1.0cm} (B) 若$x_n$无界，则$y_n$必有界.\\
+            (C) 若$x_n$有界，则$y_n$必为无穷小. \hspace{0.2cm} (D) 若$x_n$无穷大，
+            则$y_n$必为无穷小.
+        \item 设函数$y=f(x)$可微，且曲线$f'(x)\neq0$，则
+            $\displaystyle \lim_{\Delta x\rightarrow 0}\frac{\Delta y-dy}{dy}$=(\hspace{0,5cm})\\
+            (A)0.\hspace{1.5cm}(B)1. \hspace{1.5cm}(C)-1.\hspace{1.5cm}(D)不存在.   
+        \item 设$f'(a)>0$，则$\exists \delta>0$有(\hspace{0.5cm})\\
+            (A) $f(x)\geq f(a), \forall x \in (a-\delta, a+\delta).$\\
+            (B) $f(x)\leq f(a), \forall x \in (a-\delta, a+\delta).$\\
+            (C) $f(x)>f(a),\forall x\in(a, a+\delta);f(x)<f(a),\forall x \in (a-\delta,a).$\\
+            (D) $f(x)<f(a),\forall x\in(a, a+\delta);f(x)>f(a),\forall x \in (a-\delta,a).$
+    \end{enumerate}
+
+    \section{计算题(每题5分,共30分)}
+    \begin{enumerate}
+        \item $\displaystyle\lim_{x\rightarrow 0}\left(\frac{a^x+b^x+c^x}{3}\right)^\frac{1}{x}(a>0,b>0,c>0)$ 
+            \vskip 4cm
+        \item 设$\displaystyle x_{n+1} = \sqrt{x_n+2}, x_1=\sqrt{2}$, 
+            证明该数列收敛，并求$\displaystyle \lim_{n\rightarrow +\infty}x_n$ \vskip 4cm
+        \item 设$\displaystyle y=f(x+y)$,其中$f$具有二阶导数,且$f'\neq 1$, 
+            求$\displaystyle \frac{d^2y}{dx^2}$ \vskip 5cm
+        \item 设$\displaystyle y=\sin^2x$,求$y^{(n)}$ \vskip 5cm
+        \item 设$\displaystyle \left\{ \begin{array}{rcl} x & = \ln(1+t^2) \\ y & = \arctan(t) \end{array} \right.$,求$\displaystyle \frac{d^2 y}{dx^2}$ \vskip 5cm \newpage
+        \item 利用微分计算$\displaystyle \sin 30^030'  (30'=\frac{\pi}{360}\approx 0.0087)$的近似值。
+    \end{enumerate}\vskip 5cm
+
+    \section{证明题(本题10分)}
+    设函数$f(x)$:
+    \begin{enumerate}
+        \item 在$\left[x_0, x_n\right]$有定义且有连续的$n-1$阶导函数$f^{(n-1)}(x)$;
+        \item 在区间$(x_0,x_n)$内具有$n$阶导数;
+        \item $\displaystyle x_0<x_1<x_2<\cdots<x_n,f(x_0)=f(x_1)=\cdots=f(x_n)$.
+    \end{enumerate}
+    证明：在$(x_0,x_n)$内至少有一$\xi \in (x_0,x_n)$,使得$f^{(n)}(\xi)=0.$\vskip 5cm
+
+    \section{论述题(每小题5分，共10分)}
+        \begin{enumerate}
+            \item 指出函数$\displaystyle \frac{1}{x} - \left[\frac{1}{x}\right]$的间断点，
+                并指出其类型。\vskip 7cm
+            \item 求函数$\displaystyle y = \sqrt{1 - \cos x}$在不可导点处的
+                左右导数。
+        \end{enumerate}\newpage
+
+
+    \section{证明题(本题10分)}
+    证明$\displaystyle \sin \frac{1}{x}$ 在$(0,1)$ 上不一致连续，但在$(a,1)(a>0)$上一致连续。
+    \vskip 5cm
+    
+
+    \section{计算题(每小题5分，共10分)}
+    \begin{enumerate}
+        \item 已知$\displaystyle \lim_{x\rightarrow +\infty}\left(3x-\sqrt{ax^2+bx+1} \right)=2$, 求$a,b$之值。\vskip 6cm
+        \item 已知$\displaystyle y=a^x+x^a+x^x, a>0$, 求$\displaystyle \frac{\mathrm{d}y}{\mathrm{d}x}$
+    \end{enumerate}
+
+\end{spacing}
+\end{CJK}
+\end{document}

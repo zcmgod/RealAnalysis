@@ -1,0 +1,623 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{bm}
+%\pagestyle{fancy}
+%\lhead{}
+%\rhead{\bfseries Integral on lines and surfaces}
+%\lfoot{Calculus}
+%\cfoot{China University of Petroleum-Beijing}
+%\rfoot{\thepage}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+%%%% 段落首行缩进两个字 %%%%
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+\setlength{\parindent}{2em}  %中文缩进两个汉字位
+
+\newcounter{solution}
+\newcommand\TheSolution{%
+  \textbf{Solution:}\\%
+}
+
+%%%% 下面的命令重定义页面边距，使其符合中文刊物习惯 %%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{0.63cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{14.66cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+
+%%%% 下面的命令设置行间距与段落间距 %%%%
+\linespread{1.4}
+% \setlength{\parskip}{1ex}
+\setlength{\parskip}{0.5\baselineskip}
+
+%%%% 定理类环境的定义 %%%%
+\newtheorem{example}{Example}             % 整体编号
+\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{Theorem}[section]  % 按 section 编号
+\newtheorem{definition}{Definition}
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+
+%%%% 重定义 %%%%
+\renewcommand{\contentsname}{目录}  % 将Contents改为目录
+\renewcommand{\abstractname}{摘要}  % 将Abstract改为摘要
+\renewcommand{\refname}{参考文献}   % 将References改为参考文献
+\renewcommand{\indexname}{索引}
+%\renewcommand{\figurenamGe}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\algorithm}{算法}
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+\title{Integrals Depending on a Parameter}
+\author{Guoning Wu\footnote{Email: wuguoning@163.com}\\[2ex]
+ China University of Petroleum-Beijing\\[2ex]}
+\date{2017.9}
+\maketitle
+
+\section{Proper Integrals Depending on a Parameter}
+    \subsection{The Concept of an Integral Depending on a Parameter}
+    An integral depending on a parameter is a function of the form 
+    \begin{equation}
+        F(t) = \int_{E_t} f(x,t)\, \mathrm{d}t,
+        \label{eq:eq1}
+    \end{equation}
+    where $t$ plays the role of a parameter ranging over a set $T$, and 
+    to each value $t \in T$ there corresponding a set $E_t$  and a function 
+    $\varphi_t(x) = f(x,t)$ that is integrable over $E_t$ in the proper or improper 
+    sense. The nature of the set $T$ may be quite varied, but of course 
+    the most important cases occurs when $T$ is a subset of $\mathbb{R},
+    \mathbb{C}, \mathbb{R}^n, \mathbb{C}^n$.
+
+    If the integral (Eq.~\ref{eq:eq1}) is a proper integral for each 
+    value of the parameter $t \in T$, we say that the function in Eq.
+    ~\ref{eq:eq1} is a proper integral depending on a parameter.
+
+    But if the integral in Eq.~\ref{eq:eq1} exists only as an improper 
+    integral for some or all of the value of $t \in T$, we usually call 
+    $F$  an improper integral depending on a parameter.
+
+    \subsection{Continuity of an Integral Depending on a Parameter}
+    \begin{proposition}
+        Let $P = \left\{\left(x,y\right)\in \mathbb{R}^2 \vert a \le x \le b,
+        c \le y \le d\right\}$ be a rectangle on the plane $\mathbb{R}^2$.
+        If the function $f: P \to \mathbb{R}$ is continuous, that is, if 
+        $f \in C(P,\mathbb{R})$, then the function 
+        \begin{equation}
+            F(y) = \int_a^bf(x,y)\,\mathrm{d}x
+            \label{eq:eq2}
+        \end{equation}
+        is continuous at every point $y \in [c,d]$.
+    \end{proposition}
+
+    \begin{example}
+        Find the limit 
+        \[
+            \lim_{a \to 0} \int_0^1\frac{dx}{1+x^2\cos ax}
+        \]
+    \end{example}
+
+    \begin{proposition}
+        Suppose $f(x,y) \in C\left([a,b]\times[c,d]\right)$, then 
+        \[
+            \int_c^d\,\mathrm{d}y\int_a^bf(x,y)\,\mathrm{d}x  = 
+            \int_a^b\,\mathrm{d}x\int_c^df(x,y)\,\mathrm{d}y.
+        \]
+    \end{proposition}
+
+    \begin{example}
+        Find the value 
+        \[
+            I = \int_0^1\frac{x^b-x^a}{\ln x}\, \mathrm{d}x, for\quad b > a > 0
+            \]
+    \end{example}
+
+    \subsection{Differentiation of an Integral Depending on a Parameter}
+    \begin{proposition}
+        If the function $f: P \to \mathbb{R}$ is continuous and has a continuous 
+        partial derivative with respect to $y$ on the rectangle $P = \left\{ \left(x,y\right)
+        \in \mathbb{R}^2 \vert a \le x \le b, c \le y \le d\right\}$, then the integral 
+        of Eq.~\ref{eq:eq2} belongs to $C^{(1)}\left([c,d],\mathbb{R}\right)$, and 
+        \[
+            F'(y) = \int_a^b\frac{\partial f}{\partial y}(x,y)\, \mathrm{d}x.
+        \]
+    \end{proposition}
+
+    \begin{example}
+        The complete elliptic integrals
+        \[
+            E(k) = \int_0^{\frac{\pi}{2}}\sqrt{1-k^2\sin^2\varphi}\, \mathrm{d}\varphi,
+            K(k) = \int_0^{\frac{\pi}{2}}\frac{\mathrm{d}\varphi}{\sqrt{1-k^2\sin^2\varphi}}
+        \]
+    as functions of the parameter $k, 0 < k < 1$, called the modulus of the 
+    corresponding elliptic integral, are connected by the relations
+        \[
+            \frac{\mathrm{d}E}{\mathrm{d}k} = \frac{E - K}{k},
+            \frac{\mathrm{d}K}{\mathrm{d}k} = \frac{E}{k(1-k^2)} - \frac{K}{k}.
+        \]
+    \end{example}
+
+    \begin{proposition}
+        Suppose the function $f: P \to \mathbb{R}$ is continuous and has a 
+        continuous partial derivative  $\frac{\partial f}{\partial y}$ on the rectangle $P = \left\{ \left(x,y\right)
+        \in \mathbb{R}^2 \vert a \le x \le b, c \le y \le d\right\}$, further suppose 
+        $\alpha(y), \beta(y)$ are continuously differentiable functions on 
+        $[c,d]$ whose values lie in $[a,b]$ for every $y \in [c,d]$. Then the integral 
+        \[
+            F(y) = \int_{\alpha(y)}^{\beta(y)}f(x,y)\, \mathrm{d}x
+        \]
+        is defined for every $y \in [c,d]$ and belongs to $C^{(1)} \left([c,d]\right)$
+        , and the following formula holds;
+        \[
+            F'(y) = f(\beta(y),y)\cdot\beta'(y) - f(\alpha(y),y)\cdot\alpha'(y) 
+            + \int_{\alpha(y)}^{\beta(y)}\frac{\partial f}{\partial y}(x,y)\,
+            \mathrm{d}x.
+        \]
+    \end{proposition}
+
+    \begin{example}
+        Let 
+        \[
+            F_n(x) = \frac{1}{(n-1)!}\int_0^x(x-t)^{n-1}f(t)\, \mathrm{d}t,
+        \]
+        where $n \in N$ and $f$ is a function that is continuous on the interval 
+        of integration. Let us verify that $F_n^{n}(x) = f(x)$.
+    \end{example}
+
+    \subsection{Integration of an Integral Depending on a Parameter}
+    \begin{proposition}
+        If the function $f: P \to \mathbb{R}$ is continuous in the rectangle 
+        $P = \left\{\left(x,y\right) \in \mathbb{R}^2 \vert a \le x \le b and 
+        c \le y \le d \right\}$ , then the integral Eq.~\ref{eq:eq2} is integrable over 
+        the closed interval $[c,d]$ and the following equality holds:
+        \begin{equation}
+            \int_c^d\int_a^bf(x,y)\,\mathrm{d}x\,\mathrm{d}y =
+            \int_a^b\int_c^df(x,y)\,\mathrm{d}y\,\mathrm{d}x
+            \label{eq:eq3}
+        \end{equation}
+    \end{proposition}
+
+    \section{Improper Integrals Depending on a Parameter}
+    \subsection{Uniform Convergence of an Improper Integral With Respect 
+    to a Parameter}
+    \paragraph{\textbf{a. Basic Definition and Examples}}
+    Suppose that the improper integral 
+    \begin{equation}
+        F(y) = \int_a^{\omega}f(x,y)\,\mathrm{d}x
+        \label{eq:eq4}
+    \end{equation}
+    over the interval $[a,\omega]$ converges for each value $y \in Y$. For 
+    definiteness we shall assume that the integral Eq.~\ref{eq:eq4}
+    has only one singularity and that it involves the upper limit 
+    of the integration (that is, either $\omega = +\infty$ or the function $f$ is unbounded 
+    as a function of $x$ in a neighbourhood of $\omega$.)
+
+    \begin{definition}
+        We say that the improper integral Eq.~\ref{eq:eq4} depending on 
+        the parameter $y \in Y$ converges uniformly on the set $E \subset Y$
+        if for every $\epsilon > 0$ there exists a neighborhood $U_{[a,\omega[}(\omega)$
+        of $\omega$ in the set $[a,\omega[$ such that the estimate
+        \begin{equation}
+            \left | \int_b^\omega f(x,y)\, \mathrm{d}x \right | < \epsilon
+            \label{eq:eq5}
+        \end{equation}
+        for the remainder of the integral Eq.\ref{eq:eq4} holds for every 
+        $b \in U_{[a,\omega[}(\omega)$ and every $y \in E$.
+    \end{definition}
+
+    If we introduce the notation 
+    \begin{equation}
+        F_b(y) = \int_a^bf(x,y)\, \mathrm{d}x
+        \label{eq:eq6}
+    \end{equation}
+    for a proper integral approximating the improper integral of 
+    Eq.\ref{eq:eq4}, the basic definition of this section can be restated as 
+    in a different form equivalent to the previous one:
+    uniform convergence of the integral of Eq.~\ref{eq:eq4} on the set 
+    $E \subset Y$ by definition means that 
+    \begin{equation}
+        F_b(y) \rightrightarrows F(y) \text{ on } E \text{ as } b \to \omega, b \in [a,\omega[
+    \end{equation}
+
+    \begin{example}
+        The integral 
+        \[
+            \int_1^{+\infty} \frac{\mathrm{d}x}{x^2+y^2}
+        \]
+        converges uniformly on the entire set $\mathbb{R}$ of values of the 
+        parameter $y \in \mathbb{R}$.
+    \end{example}
+
+    \begin{example}
+        The integral 
+        \[
+            \int_0^{+\infty} e^{-xy}\, \mathrm{d}x
+        \]
+    converges only when $y > 0$. Moreover it converges uniformly on every 
+        set $\left\{y \in \mathbb{R} \vert y \ge y_0 \ge 0 \right\}.$
+    \end{example}
+
+    \begin{example}
+        Let us show that each of the integrals 
+        \[
+            \Phi(x) = \int_0^{+\infty} x^{\alpha}y^{\alpha+\beta+1}e^{-(1+x)y}\,\mathrm{d}y
+        \]
+        \[
+            F(y) = \int_0^{+\infty} x^{\alpha}y^{\alpha+\beta+1}e^{-(1+x)y}\,\mathrm{d}x
+        \]
+    in which $\alpha,\beta$ are fixed positive numbers, converges uniformly on the set 
+    of non-negative values of the parameter.
+    \end{example}
+
+    \paragraph{b. The Cauchy Criterion for Uniform Convergence of an Integral}
+    \begin{proposition}{\textbf{Cauchy Criterion.}}
+        A necessary and sufficient condition for the improper integral of 
+        Eq.~\ref{eq:eq4} depending on parameter $y \in Y$ to converge uniformly 
+        on a set $E \subset Y$ is that for every $\epsilon > 0$ there exist a neighborhood 
+        $U_{[a,\omega[}$ of the point $\omega$ such that 
+        \[
+           \left| \int_{b_1}^{b_2}f(x,y)\right| < \epsilon
+        \]
+    for every $b_1,b_2 \in U_{[a,\omega[}$ and every $y \in E$.
+    \end{proposition}
+
+    \begin{corollary}
+        If the function $f$ in the integral of Eq.~\ref{eq:eq4} is continuous 
+        on the set $[a, \omega[ \times [c, d]$ and the integral of Eq.~\ref{eq:eq4} 
+        converges for every $y \in ]c,d[$ but diverges for $y = c$ or $y = d$,
+        then it converges non-uniformly on the interval $]c,d[$ and also on 
+        any set $E \subset ]c,d[$ whose closure contains the point of divergence.
+    \end{corollary}
+
+    \begin{example}
+        The integral 
+        \[
+            \int_0^{+\infty}e^{-tx^2}\, \mathrm{d}x
+            \]
+        converges for $t > 0$ and diverges at $t = 0$, hence it demonstrably converges 
+        non-uniformly on every set of positive numbers having $0$ as a limit point.
+    \end{example}
+
+    \paragraph{\textbf{c. Sufficient Conditions for Uniform Convergence of 
+    an Improper Integral Depending on a Parameter}}
+
+    \begin{proposition}{The Weierstrass test.}
+        Suppose the functions $f(x,y)$ and $g(x,y)$ are integrable with respect to $x$
+        on every closed interval $[a,b] \subset [a,\omega[$ for each value of $y \in Y$.
+        
+        If the inequality $\left | f(x,y) \right | \le g(x,y) $ holds for each value 
+        of $y \in Y$ and every $x \in [a,\omega[$ and the integral 
+        \[
+            \int_a^{\omega}g(x,y)\,\mathrm{d}x
+        \]
+        converges uniformly on $Y$, then the integral 
+        \[
+            \int_0^{\omega}f(x,y)\,\mathrm{d}x
+        \]
+        converges absolutely for each $y \in Y$ and uniformly on $Y$.
+    \end{proposition}
+
+    The most frequently encountered case of Proposition 2 occurs when the function 
+    $g$ is independent of the parameter $y$. It is this case in which Proposition 2 
+    is usually called the Weierstrass M-test for uniform convergence of an integral.
+
+    \begin{example}
+        The integral 
+        \[
+            \int_0^{\infty}\frac{\cos \alpha x}{1 + x^2}\, \mathrm{d}x
+        \]
+        converges uniformly on the whole set $\mathbb{R}$ of the parameter $\alpha$,
+        since $\left |\frac{\cos \alpha x}{1 + x^2}\right | \le \frac{1}{1 + x^2}$, and the integral 
+        $\int_0^{\infty}\frac{\mathrm{d}x}{1 + x^2}$ converges.
+    \end{example}
+
+    \begin{proposition}{(\emph{Abel-Dirichlet test.})}
+        Assume that the function $f(x,y)$ and $g(x,y)$ are integrable with respect to 
+        $x$ at each $y \in Y$ on every closed interval $[a,b]\subset[a,\omega[.$
+
+        A sufficient condition for uniform convergence of the integral 
+        \[
+            \int_a^{\omega}\left(f\cdot g\right)\, \mathrm{d}x
+        \]
+        on the set $Y$ is that one of the following two pairs of conditions holds:
+
+        \emph{1-1)} either there exists a constant $M \in \mathbb{R}$ such that 
+        \[
+            \left |\int_a^bf(x,y)\, \mathrm{d}x \right | < M
+        \]
+        for any $b \in [a, \omega[$ and any $y \in Y$ and 
+
+        \emph{1-2)} for each $y \in Y$ the function $g(x,y)$ is monotonic with respect to $x$ on 
+        the interval $[a, \omega[$ and $g(x,y)\rightrightarrows 0$ on $Y$ as $x \to \omega$,
+        $x \in [a,\omega[$, or 
+
+        \emph{2-1)} the integral 
+        \[
+            \int_a^{\omega}f(x,y)\, \mathrm{d}x
+            \]
+        converges uniformly on the set $Y$ and 
+
+        \emph{2-2)} for each $y \in Y$ the function $g(x,y)$ is monotonic with respect 
+        to $x$ on the interval $[a, \omega[$ and there exists a constant $M \in \mathbb{R}$
+        such that 
+        \[
+            \left |g(x,y)\right| < M
+            \]
+        for every $x \in [a, \omega[$ and every $y \in Y$.
+    \end{proposition}
+    Applying the second mean-value theorem for the integral, we have
+    \[
+        \int_{b_1}^{b_2} \left(f\cdot g\right)(x,y)\, \mathrm{d}x = g(b_1,y)
+        \int_{b_1}^{\xi} f(x,y)\, \mathrm{d}x + g(b_2,y)\int_{\xi}^{b_2}f(x,y)\, \mathrm{d}x
+        \]
+
+    \begin{example}
+        The integral 
+        \[
+            \int_0^{\infty}\frac{\sin x}{x}e^{-xy}\, \mathrm{d}x
+            \]
+        converges uniformly on the set $\left\{y \in \mathbb{R} \vert y \ge 0 \right\}$.
+    \end{example}
+
+    \begin{example}
+        The integral 
+        \[
+            \int_0^{\infty} \frac{\sin xy}{x}\, \mathrm{d}x
+            \]
+        converges uniformly on the set $\left\{y \in \mathbb{R} \vert y \ge y_0 > 0
+        \right\}$ and not uniformly convergence on the set $\left\{y \in \mathbb{R} \vert y > 0
+        \right\}$ 
+    \end{example}
+
+    \begin{example}
+        \emph{The integrali} $\displaystyle \int_0^{+\infty} \frac{\cos x^2}{x^p}\, \mathrm{d}x$
+        \emph{converges uniformly on each} $p \in [\alpha,\beta]\subset(-1,1)$.
+    \end{example}
+
+    \section{Limiting Passage under the Sign of an Improper Integral and 
+    Continuity of an Improper Integral Depending on a Parameter}
+    \begin{proposition}
+        Let $f(x,y)$ be a family of functions depending on a parameter $y \in Y$ that 
+        are integrable, possibly in the improper sense, on the interval $a \le x \le 
+        \omega$, and let $\mathcal{B}_Y$ be a base in $Y$.
+        
+        If 
+
+        a) for every $b \in [a,\omega[$ 
+        \[
+            f(x,y)\rightrightarrows \varphi(x) \text{ on } [a,b]
+            \text{ over the base } \mathcal{B}_Y,
+            \]
+        b) the integral $\displaystyle \int_a^{\omega}f(x,y)\,\mathrm{d}x$
+        converges uniformly on $Y$,
+        then the limit function $\varphi$is improperly integrable on $[a,\omega[$
+        and the following equality holds:
+        \[
+            \lim_{\mathcal{B}_Y}\int_a^{\omega}f(x,y)\, \mathrm{d}x = \int_a^{\omega}\varphi 
+            \, \mathrm{d}x.
+            \]
+    \end{proposition}
+
+    \begin{proposition}
+        If 
+
+        a) the function $f(x,y)$ is continuous on the set 
+
+        $\displaystyle \left\{
+            (x,y) \in \mathbb{R}^2 \vert a \le x <\omega, c \le y \le d \right\}$
+        and 
+
+        b) the integral $F(y) = \int_a^{\omega}f(x,y)\, \mathrm{d}x$ converges 
+        uniformly on $[c,d]$,
+
+        then the function $F(y)$ is continuous on $[c,d].$
+    \end{proposition}
+
+    \begin{proposition}
+        Suppose $f(x,y)$ is continuous on $[a,+\infty) \times [c,d]$, and 
+        the integral $\int_a^{\infty}f(x,y)\, \mathrm{d}x$ converges uniformly on 
+        $[c,d]$, then we have 
+        \[
+            \int_c^d\,\mathrm{d}y\int_a^{+\infty}f(x,y)\, \mathrm{d}x = 
+            \int_a^{+\infty}\,\mathrm{d}x\int_c^df(x,y)\,\mathrm{d}y
+            \]
+    \end{proposition}
+
+    \begin{proposition}
+        Suppose $f(x,y), f_y(x,y)$ are continuous on $[a,+\infty)\times[c,d]$, 
+        for each $y \in [c,d]$ the integral $\int_a^{+\infty}f(x,y)\, \mathrm{d}x$ 
+        converges. Furthermore the integral $\int_a^{+\infty}f_y(x,y)\,\mathrm{d}x$
+        is uniformly converges. Then we have 
+        \[
+            \frac{d}{dy}\int_a^{+\infty}f(x,y)\,\mathrm{d}x = 
+            \int_a^{+\infty}\frac{\partial}{\partial y}f(x,y)\,\mathrm{d}x
+            \]
+    \end{proposition}
+
+    \section{The Eulerian Integrals}
+    In this section and the next we shall illustrate the application of the theory 
+    developed above to some specific integrals of importance in analysis that 
+    depend on a parameter.
+
+    Following Legendre, we define the Eulerian integrals of first and second 
+    kinds respectively as the two special functions that follow:
+
+    \begin{equation}
+        B(\alpha, \beta) = \int_0^1x^{\alpha - 1}(1-x)^{\beta - 1}\, \mathrm{d}x
+    \end{equation}
+    \begin{equation}
+        \Gamma(\alpha) = \int_0^{+\infty} x^{\alpha - 1} e^{-x}\, \mathrm{d}x.
+    \end{equation}
+
+    The first of these is called the beta function and the second the gamma function.
+
+    \subsection{The Beta Function}
+    \paragraph{\rm \textbf{a. Domain of Definition}}
+    A necessary and sufficient condition for the convergence of the integral of the 
+    beta function at the lower limit is that $\alpha > 0$. Similarly, convergence at 1
+    occurs if and only if $\beta > 0.$ Thus the beta function is defined when both
+    of the following conditions hold simultaneously:
+    \[
+        \alpha > 0 \text{ and } \beta > 0
+        \]
+
+    \paragraph{\rm \textbf{b. Symmetry}}
+    We can verify that:
+    \[
+        B(\alpha, \beta) = B(\beta, \alpha)
+        \]
+    
+    \
+
+    \paragraph{\rm \textbf{c. The Reduction Formula}}
+    If $\alpha > 1$, the following equality holds:
+    \[
+        B(\alpha, \beta) = \frac{\alpha - 1}{\alpha + \beta - 1}B(\alpha - 1, \beta)
+        \]
+
+    We can now write the reduction form:
+    \[
+        B(\alpha, \beta) = \frac{\alpha - 1}{\alpha + \beta - 1}B(\alpha, \beta - 1)
+        \]
+
+    It can be seen immediately from the definition of the beta function that 
+    $B(\alpha, 1) = \frac{1}{\alpha}$, and so for $n \in \mathbb{N}$ we obtain 
+    \begin{equation}
+        \begin{split}
+            B(\alpha, n) & = \frac{n-1}{\alpha+n-1}\cdot\frac{n-2}{\alpha+n-2}\cdots
+        \frac{n-(n-1)}{\alpha+n-(n-1)}B(\alpha,1)\\
+            & = \frac{(n-1)!}{\alpha (\alpha+1)\cdots(\alpha+n-1)}.
+        \end{split}
+    \end{equation}
+
+    In particular, for $m, n \in \mathbb{N}$
+    \begin{equation}
+        B(m,n) = \frac{(m-1)!(n-1)!}{(m+n-1)!}
+    \end{equation}
+
+    \paragraph{\rm \textbf{d. Other forms of Representation of the Beta Function}}
+
+    (1) One form for the beta function is 
+    \[
+        B(\alpha, \beta) = 2\int_0^{\frac{\pi}{2}} \cos^{2p-1}\phi\sin^{2q-1} \phi
+        \, \mathrm{d}\phi
+        \]
+    \[
+        B\left(\frac{1}{2}, \frac{1}{2}\right) = \pi
+        \]
+
+    (2) The other form for the beta function is 
+    \[
+        B(\alpha, \beta) = \int_0^{+\infty} \frac{t^{\beta -1}}{(1+t)^{\alpha + \beta}}
+        \, \mathrm{d}t
+        \]
+
+    \section{The Gamma Function}
+
+    \paragraph{\rm \textbf{a. Domain of the Definition}}
+    The Gamma Function is:
+    \[
+        \Gamma(\alpha) = \int_0^{+\infty} x^{\alpha -1}e^{-x}\, \mathrm{d}x
+        \]
+    It can be seen from the definition that the integral defining the gamma 
+    function converges at zero only for $\alpha > 0$, while it converges at infinity 
+    for all values of $\alpha \in \mathbb{R}$, due to the presence of the rapidly decreasing 
+    factor $e^{-x}$. Thus the gamma function is defined for $\alpha > 0$.
+
+    \paragraph{\rm \textbf{b. Smoothness and the Formula for the Derivatives}}
+    The gamma function is infinitely differentiable, and 
+    \begin{equation}
+        \Gamma^{(n)}(\alpha) = \int_0^{+\infty}x^{\alpha - 1} \ln^nx e^{-x}\, \mathrm{d}x
+        \label{eq:dgamma}
+    \end{equation}
+
+    \paragraph{\rm \textbf{c. The Reduction Formula}}
+    The relation 
+    \[
+        \Gamma(\alpha + 1) = \alpha\Gamma(\alpha)
+        \]
+    holds. It is known as the reduction formula for the gamma function.
+
+    Since $\displaystyle \Gamma(1) = 1$, we conclude that for $n \in \mathbb{N}$
+    \[
+        \Gamma(n+1) = n!
+        \]
+    Thus the gamma function turns out to be closely connected with the 
+    number-theoretic function $n!$.
+
+    \paragraph{\rm \textbf{d. The Euler-Gauss Formula}}
+    This is usually given to the following equality:
+    \begin{equation}
+        \Gamma(\alpha) = \lim_{n \to \infty} n^{\alpha}\frac{(n-1)!}{\alpha(\alpha+1)\cdots(\alpha+n-1)}
+    \end{equation}
+
+    \paragraph{\rm \textbf{e. The Complement Formula}}
+    For $0 < \alpha < 1$ the values $\alpha$ and $1 - \alpha$ of the argument of the gamma
+    function are mutually complementary, so that the equality 
+    \begin{equation}
+        \Gamma(\alpha)\Gamma(1-\alpha) = \frac{\pi}{\sin \pi\alpha} (0 < \alpha < 1)
+        \label{eq:complement eq}
+    \end{equation}
+
+    It follows in particular from EQ~\ref{eq:complement eq} that 
+    \[
+        \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}
+        \]
+    We observe that 
+    \[
+        \Gamma\left(\frac{1}{2}\right) = \int_0^{+\infty}x^{-\frac{1}{2}}e^{-x}\, \mathrm{d}x
+         = 2\int_0^{+\infty}e^{-u^2}\,\mathrm{d}u = \sqrt{\pi}
+         \]
+
+     \paragraph{\rm \textbf{f. Connection Between the Beta and Gamma Function}}
+     The connection between the beta and gamma function is 
+     \begin{equation}
+         B\left(\alpha, \beta\right) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}.
+     \end{equation}
+
+     \begin{example}
+         Find the result of 
+         \[
+             I = \int_0^{\frac{\pi}{2}}\sin^6x\cos^4x\, \mathrm{d}x
+             \]
+     \end{example}
+
+     \begin{example}
+         Find the result of 
+         \[
+             \int_0^1x^8 \sqrt{1-x^3}\, \mathrm{d}x
+             \]
+     \end{example}
+
+     \begin{example}
+         suppose $\alpha > -1$, find the results of the following integrals
+         \[
+             \int_0^{\frac{\pi}{2}}\sin^{\alpha}x\, \mathrm{d}x  = 
+             \int_0^{\frac{\pi}{2}}\cos^{\alpha}x\, \mathrm{d}x 
+             \]
+         Furthermore, find the volume of the n-dimensional sphere of the form
+         \[
+             B_n = \left\{(x_1, x_2, \cdots ,x_n) \vert x_1^2+x_2^2+\cdots+x_n^2 \le R^2\right\}
+             \]
+     \end{example}
+\end{CJK}
+\end{document}

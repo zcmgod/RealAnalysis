@@ -1,0 +1,6 @@
+import os
+
+env = Environment(ENV=os.environ)
+pdfOutput = env.PDF(target='cal-17-18-1.pdf',source='cal-17-18-1.tex')
+Depends(pdfOutput,Split('cal-17-18-1.tex'))
+

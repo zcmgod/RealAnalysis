@@ -1,0 +1,557 @@
+\documentclass[a4paper,12pt]{article} % declaration
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm,accents}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{lmodern,bm}
+\usepackage{enumitem}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Examples}
+\newtheorem*{remark}{Remark}
+\title{Primitive}
+\author{Guoning Wu}
+\begin{document}
+\tableofcontents
+\setcounter{tocdepth}{2}
+\listoffigures
+\listoftables
+\maketitle
+\theoremstyle{definition}
+
+In differential calculus, as we verified on the examples of previous
+section, in addition to knowing how to differentiate functions and 
+write relations between their derivatives, it is also very valuable 
+to know how to find functions from relations satisfied by their 
+derivatives. The simplest such problem, but, as will be seen below, 
+a very important one, is the problem of finding a function $F(x)$ knowing 
+its derivative $F'(x) = f(x)$.
+
+\section{\rm \textbf{The Primitive and the Indefinite Integral}}
+
+\begin{definition}
+    \normalfont 
+    A function $F(x)$ is a primitive of a function $f(x)$ on an interval 
+    if $F$ is differentiable on the interval and satisfies the equation 
+    $F'(x) = f(x)$, or, what is the same, $\mathrm{d}F(x) = f(x)\mathrm{d}x$.
+\end{definition}
+
+\begin{example}
+    \normalfont
+    The function $F(x) = \tan^{-1}x$ is a primitive of the function 
+    $f(x) = \frac{1}{1+x^2}$ on the entire real line, since $\left(\tan^{-1}x\right)' = 
+    \frac{1}{1+x^2}$.
+\end{example}
+
+\begin{example}
+    \normalfont 
+    The function $F(x) = \cot^{-1}\frac{1}{x}$ is a primitive of $f(x)
+    =frac{1}{1+x^2}$ on the set of positive real numbers and on the 
+    set of negative real numbers.
+\end{example}
+
+\begin{proposition}
+    \normalfont 
+    If $F_1(x)$ and $F_2(x)$ are two primitives of $f(x)$ on the same interval,
+    then the difference $F_1(x) - F_2(x)$ is constant on that interval.
+\end{proposition}
+
+Like the operation of taking the differential, the operation of 
+finding a primitive has the name "indefinite integration" and 
+the mathematical notation 
+\begin{equation}
+    \int f(x)\mathrm{d}x
+\end{equation}
+\begin{equation}
+    \mathrm{d}\int f(x) \mathrm{d}x = \mathrm{d}F(x) = f(x)\mathrm{d}x
+    \label{eq:eq1}
+\end{equation}
+\begin{equation}
+    \int\mathrm{d}F(x) = \int F'(x)\mathrm{d}x = F(x) + C
+    \label{eq:eq2}
+\end{equation}
+Formulas ~\ref{eq:eq1} and ~\ref{eq:eq2} establish a reciprocity 
+between operations of differentiation and indefinite integration.
+
+\section{\rm \textbf{The Basic Methods of Finding a Primitive}}
+The following rules holds:
+\begin{equation}
+    \int \alpha u(x) + \beta v(x) \mathrm{d}x = \alpha \int u(x)\mathrm{d}x + 
+    \beta \int v(x)\mathrm{d}x
+\end{equation}
+
+\begin{equation}
+    \int \left(uv\right)'\mathrm{d}x = \int u'v\mathrm{d}x + \int uv'\mathrm{d}x
+\end{equation}
+
+\begin{proposition}
+    \normalfont
+    If $\int f(x)\mathrm{d}x = F(x) + C,$ on an interval,
+    $ I_x \text{ and } I_t \to I_x $ is a smooth (continuously 
+    differentiable mapping of the interval )$ I_x$, then
+    \[
+        \int (f\circ\varphi)(t)\varphi'(t)\mathrm{d}t = (F\circ\varphi)(t) + C.
+        \]
+\end{proposition}
+
+\section{\rm \textbf{Primitive of Basic Elementary Functions}}
+\[
+    \int \frac{1}{\sqrt{x^2\pm 1}}\mathrm{d}x = \ln \vert x + \sqrt{x^2 \pm 1} \vert + C
+    \]
+\[
+    \int \frac{1}{1 - x^2} \mathrm{d}x = \frac{1}{2}\ln\left\vert \frac{1+x}{1-x}
+    \right\vert + C
+    \]
+
+\subsection{Linearity of the Indefinite Integral}
+\begin{example}
+    \[
+        \begin{split}
+            &\int a_0 + a_1x + \cdots + a_nx^n\mathrm{d}x \\
+            & = a_0 \int 1\mathrm{d}x + a_1\int x\mathrm{d}x + \cdots + 
+             a_n\int x^n \mathrm{d}x \\
+            & = a_0x + \frac{1}{2}a_1x^2 + \cdots + \frac{1}{n+1}a_nx^{n+1}
+        \end{split}
+            \]
+\end{example}
+
+\begin{example}
+    \[
+        \begin{split}
+            & \int \left(x + \frac{1}{\sqrt{x}}\right)^2\mathrm{d}x = 
+        \int \left(x^2 + 2\sqrt{x} + \frac{1}{x}\right)\mathrm{d}x \\
+            & = \frac{1}{3}x^3 + \frac{4}{3}x^{3/2} + \ln \vert x \vert +C
+        \end{split}
+        \]
+\end{example}
+
+\subsection{Integration by Parts}
+
+\[
+    \int u\mathrm{d}v = uv - \int v\mathrm{d}u
+    \]
+\begin{example}
+    \[
+        \int \ln x \mathrm{d}x
+        \]
+\end{example}
+\begin{example}
+    \[
+        \int x^2e^x\mathrm{d}x
+        \]
+\end{example}
+
+\subsection{Change of Variable in an Indefinite Integral}
+\[
+    \int \left(f\circ\varphi\right)(t)\varphi'(t)\mathrm{d}t = \int f(\varphi(t))\mathrm{d}\varphi(t) = 
+    F(\varphi(t)) + C
+    \]
+
+\begin{example}
+    \[
+        \int \frac{t}{1+t^2}\mathrm{d}t = \frac{1}{2}\int \frac{\mathrm{d}(t^2 + 1)}{1+t^2}
+        = \frac{1}{2}\ln (t^2 + 1) + C
+        \]
+\end{example}
+
+\begin{example}
+    \[
+        \int \sin 2x \cos 3x \mathrm{d}x
+        \]
+\end{example}
+
+\begin{example}
+    \[
+    \int \sin^{-1}x \mathrm{d}x
+    \]
+\end{example}
+
+\begin{example}
+    \[
+    \int e^{ax} \cos bx \mathrm{d}x
+    \]
+\end{example}
+
+We could have arrived at this result by using Euler's formula and the
+fact that the primitive of the function $e^{(a+ib)x} = e^{ax}\cos bx + ie^{ax}\sin bx$ 
+is 
+\[
+    \begin{split}
+        \frac{1}{a+ib}e^{(a+ib)x}  & = \frac{a-ib}{a^2 + b^2}e^{(a+ib)x} \\
+        & = \frac{a\cos bx + b\sin bx}{a^2 + b^2}e^{ax} - 
+            i\frac{a\sin bx + b\cos bx}{a^2 + b^2}e^{ax}
+    \end{split}
+            \]
+
+It should not conflate the phase "finding a primitive" with the impossible 
+task of "expressing the primitive of a given elementary function in 
+terms of elementary functions.
+
+For example, the \textbf{sine integral} Si $x$ is the primitive
+\[
+    \normalfont
+   Si x =  \int \frac{\sin x}{x} \mathrm{d}x
+    \]
+ of the function $\frac{\sin x}{x}$ that tends to zero as 
+$x \to 0$.
+
+Similarly, the function 
+\[
+    \normalfont
+    Ci x = \int \frac{\cos x}{x} \mathrm{d}x
+    \]
+specified by the condition$ Ci x \to 0$ as $ x \to \infty$ is not elementary.
+The function $Ci x$ is called the \textbf{cosine integral.}
+
+The primitive 
+\[
+    \normalfont 
+   li x =  \int \frac{1}{\ln x}\mathrm{d}x
+   \]
+   is also not elementary. One of the primitives of this function 
+   is denoted as $li x$ and is called \textbf{logarithmic integral.}
+
+\section{Primitive of Rational Functions}
+Let us consider the problem of integrating $R(x)\mathrm{d}x$, where 
+$R(x) = \frac{P(x)}{Q(x)}$ is a ratio of polynomials.
+
+If we work in the domain of real numbers, then, without going outside 
+this domain, we can express every such fraction, as we know from 
+algebra as a sum 
+\begin{equation}
+    \frac{P(x)}{Q(x)} = p(x) + \sum_{j=1}^l \left(\sum_{k=1}^{k_j} \frac{a_{jk}}{(x - x_j)^k}\right)
+    + \sum_{j=1}^n\left(\sum_{k=1}^{m_j}\frac{b_{jk}x + c_{jk}}{(x^2 + p_jx + q)^k}\right)
+\end{equation}
+
+We have already integrated a polynomial, so that it remains only 
+to consider the integration of the forms
+\[
+    \int\frac{1}{(x-a)^k}\mathrm{d}x  \text{ and } \int \frac{bx + c}{(x^2 + px + q)^k}\mathrm{d}x
+    \]
+The first of these problems can be solved immediately, since 
+\begin{equation}
+    \int \frac{1}{(x-a)^k}\mathrm{d}x = \left\{\begin{array}{cl}\frac{1}{-k+1}
+        (x-a)^{-k+1}+C & \text{ for } k \ne 1 \\
+        \ln \vert x-a \vert +C & \text{ for } k = 1 
+    \end{array} \right.
+\end{equation}
+
+With the integral 
+\[
+    \int \frac{bx+c}{(x^2+px+q)^k}\mathrm{d}x
+    \]
+we proceed as follows. We present the polynomial $x^2+px+q$ as $\left(x+\frac{1}{p}\right)^2
+ + \left(q - \frac{1}{4}p^2\right)$, where $q - \frac{1}{4}p^2 > 0$, since the polynomial 
+ $x^2+px+q$ has no real roots. Setting $x + \frac{1}{2}p = u$ and $q - \frac{1}{4}p^2
+ = a^2$, we obtain 
+\[
+    \int \frac{bx + c}{(x^2 + px + q)^k}\mathrm{d}x = 
+    \int \frac{\alpha u + \beta}{(u^2 + a^2)^k}\mathrm{d}u
+    \]
+where $\alpha = a, \beta = c - \frac{1}{2}bp.$
+
+Next, 
+\[
+    \begin{split}
+        \int \frac{u}{(u^2 + a^2)^k}\mathrm{d}u & = \frac{1}{2}\int 
+        \frac{\mathrm{d}(u^2 + a^2)}{(u^2 + a^2)^k}\\  & = 
+        \left\{\begin{array}{cl} \frac{1}{2(1-k)}\left(u^2 + a^2\right)^{-k+1} + C & \text{ for } k \ne 1, \\
+            \frac{1}{2}\ln (u^2 + a^2) + C & \text{ for } k = 1 \end{array}\right.
+    \end{split}
+    \]
+and it remains only to study the integral 
+\begin{equation}
+    I_k = \int \frac{\mathrm{d}u}{(u^2 + a^2)^k}.
+    \label{eq:eq3}
+\end{equation}
+
+Integrating by parts and making elementary transformations, we have 
+\[
+    \begin{split}
+        I_k  & = \int \frac{\mathrm{d}u}{(u^2 + a^2)^k} = \frac{u}{(u^2 + a^2)^2}
+        + 2k \int \frac{u^2\mathrm{d}u}{(u^2 + a^2)^{k+1}} \\ & = 
+        \frac{u}{(u^2 + a^2)^k} + 2k \int \frac{(u^2 + a^2) - a^2}{(u^2 + a^2)^{k+1}}
+        \mathrm{d}u = \frac{u}{(u^2 + a^2)^k} + 2kI_k - 2ka^2I_{k+1}.
+    \end{split}
+        \]
+from which we obtain the recursion relation
+\begin{equation}
+    I_{k+1} = \frac{1}{2ka^2}\frac{u}{(u^2 + a^2)^k} + \frac{2k - 1}{2ka^2}I_k
+\end{equation}
+which makes it possible to lower the exponent $k$ in the integral~\ref{eq:eq3}.
+But $I_1$ is easy to compute:
+\begin{equation}
+    I_1 = \int \frac{\mathrm{d}u}{u^2 + a^2} = \frac{1}{a}\int \frac{\mathrm{d}\left(\frac{u}{a}\right)}
+    {1+\left(\frac{u}{a}\right)^2} = \frac{1}{a}\tan^{-1}\frac{u}{a} + C.
+\end{equation}
+
+\begin{proposition}
+    \normalfont
+    The primitive of any rational function $R(x) = \frac{P(x)}{Q(x)}$ can be 
+    expressed in terms of rational functions and the transcendental functions 
+    $\ln$ and $\tan^{-1}$. The rational part of the primitive, when placed over a 
+    common denominator, will have a denominator containing all the factors 
+    of the polynomial $Q(x)$ with multiplicities one less that they have in $Q(x)$.
+\end{proposition}
+
+\begin{example}
+    \normalfont
+    Calculate $\displaystyle\int \frac{2x^2 + 5x + 5}{(x^2 - 1)(x + 2)}\mathrm{d}x$
+\end{example}
+
+\begin{example}
+    \normalfont 
+    Calculate $\displaystyle \int \frac{x^7 - 2x^6 + 4x^5 - 5x^4 + 4x^3 - 5x^2 - x}
+    {(x - 1)^2(x^2 + 1)^2}\mathrm{d}x$
+\end{example}
+
+\section{Primitive of the Form $\displaystyle \int R(\cos x, \sin x)\mathrm{d}x$}
+Let $R(u,v)$ be a rational function in $u$ and $v$, that is a quotient of polynomials 
+$\displaystyle \frac{P(u,v)}{Q(u,v)}$, which are linear combinations of monomials 
+$u^mv^n$, where $m = 1,2,\cdots, n=1,2,\cdots$.
+
+Several methods exist for computing the integral $\displaystyle \int R(\cos x, \sin x)
+\mathrm{d}x$, one of which is completely general, although not always the most efficient.
+\paragraph{\rm \textbf{a.}} We make the change of variable $t = \tan\frac{x}{2}$. Since 
+\[
+    \begin{split}
+        &\cos x = \frac{1 - \tan^2\frac{x}{2}}{1 + \tan^2\frac{x}{2}},\quad
+    \sin x = \frac{2\tan \frac{x}{2}}{1 + \tan^2\frac{x}{2}},\\
+        &\mathrm{d}t = \frac{\mathrm{d}x}{2\cos^2\frac{x}{2}},\quad
+    \mathrm{d}x = \frac{2\mathrm{d}t}{1 + \tan^2\frac{x}{2}}.
+    \end{split}
+    \]
+as follows that 
+\[
+    \int R(\cos x, \sin x)\mathrm{d}x = \int R\left(\frac{1-t^2}{1+t^2},\frac{2t}{1+t^2}\right)
+    \frac{2}{1+t^2}\mathrm{d}t,
+    \]
+and the problem has been reduced to integrating a rational function.
+
+However, this way leads to a very cumbersome rational function; for 
+that reason one should keep in mind that in many cases there are other 
+possibilities for rationalizing the integral.
+
+\paragraph{\rm \textbf{b.}} In the case integral of the form $ \displaystyle 
+\int R(\cos^2x, \sin^2x)\mathrm{d}x$ or $\displaystyle \int r(\tan x)\mathrm{d}x$, 
+where $r$ is rational function, a convenient substitution is $t = \tan x$, since 
+\[
+    \begin{split}
+        &\cos^2x = \frac{1}{1 + \tan^2x}, \quad \sin^2x = \frac{tan^2x}{1 + \tan^2x}\\
+        &\mathrm{d}t = \frac{\mathrm{d}x}{\cos^2x} \Rightarrow \mathrm{d}x = \frac{\mathrm{d}t}
+        {1 + t^2}
+    \end{split}
+    \]
+Carrying out this substitution, we obtain respectively 
+\[
+    \int R(\cos^2x, \sin^2x)\mathrm{d}x = \int R\left(\frac{1}{1+t^2}, \frac{t^2}{1+t^2}\right)
+    \frac{\mathrm{d}t}{1+t^2}
+    \]
+\[
+    r(\tan x)\mathrm{d}x = \int r(t)\frac{\mathrm{d}t}{1 + t^2}
+    \]
+\paragraph{\rm \textbf{c.}} In the case of integrals of the form 
+\[
+    \int R(\cos x, \sin^2x)\sin x \mathrm{d}x, \quad 
+    \int R(\cos^2x, \sin x)\cos x \mathrm{d}x,
+    \]
+One can move the function $\sin x$ and $\cos x $ into the differential 
+and make the substitution $t = \cos x$ or $t = \sin x$ respectively. 
+After these substitution, the integrals will have the form 
+\[
+    -\int R(t, 1-t^2)\mathrm{d}t \text{ or } \int R(1-t^2,t)\mathrm{d}t
+    \]
+
+\begin{example}
+    \[
+        \int \frac{\mathrm{d}x}{3 + \sin x}\mathrm{d}x
+    \]
+\end{example}
+
+\begin{example}
+    \[
+        \int \frac{\mathrm{d}x}{(\sin x + \cos x)^2}\mathrm{d}x
+    \]
+\end{example}
+
+\begin{example}
+    \[
+        \int \frac{\mathrm{d}x}{2\sin^3x - 3\cos^23x + 1}\mathrm{d}x
+    \]
+\end{example}
+
+\begin{example}
+    \[
+        \int \frac{\cos^3x}{\sin^7x}\mathrm{d}x
+    \]
+\end{example}
+
+\section{Primitive of the Form $\displaystyle \int R(x, y(x))\mathrm{d}x$.}
+Let $R(x,y)$ be, as in previous section, a rational function. 
+Let us consider some special integrals of the form 
+\[
+    \int R(x,y(x))\mathrm{d}x
+    \]
+
+First of all, it is clear that if one can make a change of variable 
+$x = x(t)$ such that both functions $x = x(t)$ and $y = y(t)$ are rational 
+functions of $t$, then $x'(t)$ is also a rational function and 
+\[
+    \int R(x,y(t))\mathrm{d}x = \int R(x(t),y(x(t)))x'(t)\mathrm{d}t
+    \]
+that is, the problem will have been reduced to integrating a rational 
+function.
+
+Consider the following special choices of the function $y = y(x)$.
+\paragraph{\rm \textbf{a.}} If $\displaystyle y = \sqrt[n]{\frac{ax+b}
+{cx+d}}$, where $n \in \mathbb{N}$, then, setting $\displaystyle t^n = \frac{ax+b}{cx+d}$,
+we obtain 
+\[
+    x = \frac{d\cdot t^n - b}{a - c\cdot t^n}, y = t,
+    \]
+and the integrand rationalizes.
+\begin{example}
+    \[
+        \int \sqrt[3]{\frac{x-1}{x+1}}\mathrm{d}x
+        \]
+\end{example}
+\paragraph{\rm \textbf{b.}} Let us now consider the case when $y = \sqrt{ax^2 + bx + c}$
+, that is, integrals of the form 
+\[
+    \int R(x,\sqrt{ax^2 + bx + c})\mathrm{d}x
+    \]
+By completing the square in the trinomial $ax^2 + bx + c$ and making a 
+suitable liner substitution, we reduce the general case to one of the 
+following three simple cases:
+\begin{equation}
+    \int R(t,\sqrt{t^2 + 1})\mathrm{d}t, 
+    \int R(t,\sqrt{t^2 - 1})\mathrm{d}t, 
+    \int R(t,\sqrt{1 - t^2})\mathrm{d}t
+    \label{eq:eq4}
+\end{equation}
+
+To rationalize these integrals it now suffices to make the following 
+substitutions, respectively\footnote{These substitution were proposed
+long ago by Euler.}:
+\[
+    \sqrt{t^2 + 1} = tu + 1, \text{ or } \sqrt{t^2 + 1} = tu - 1, 
+    \text{ or }\sqrt{t^2 + 1} = t - u;
+    \]
+\[
+    \sqrt{t^2 - 1} = u(t-1), \text{ or } \sqrt{t^2 - 1} = u(t+1),
+    \text{ or } \sqrt{t^2 - 1} = t - u;
+    \]
+\[
+    \sqrt{1 - t^2} = u(1 - t), \text{ or } \sqrt{1 - t^2} = u(1+t),
+    \text{ or } \sqrt{t^2 - 1} = tu \pm 1.
+    \]
+
+Let us verify, for example, that after the first substitution we will 
+have reduced the first integral to the integral of a rational function.
+
+In fact, if $\sqrt{t^2 + 1} = tu + 1$, then $t^2 + 1 = t^2u^2 + 2tu + 1$, 
+from which we find 
+\[
+    t = \frac{2u}{1 - u^2}
+    \]
+and then 
+\[
+    \sqrt{t^2 + 1} = \frac{1 + u^2}{1 - u^2}
+    \]
+
+The integrals~\ref{eq:eq4} can also be reduced, by means of the 
+substitutions $t = \sinh \varphi, t = \cosh \varphi, t = \sin \varphi, \text{ or }
+t = \cos \varphi$,  respectively, to the following forms:
+\[
+    \begin{split}
+        &\int R(\sinh \varphi, \cosh \varphi)\cosh \varphi\mathrm{d}\varphi,
+    \int R(\cosh \varphi, \sinh \varphi)\sinh \varphi\mathrm{d}\varphi,\\
+        & \int R(\sin \varphi, \cos \varphi)\cos \varphi\mathrm{d}\varphi,
+    -\int R(\cos \varphi, \sin \varphi)\sin \varphi\mathrm{d}\varphi.
+    \end{split}
+    \]
+\begin{example}
+    \[
+        \int \frac{\mathrm{d}x}{x + \sqrt{x^2+2x+1}} = 
+        \int \frac{\mathrm{d}x}{x + \sqrt{(x+1)^2+1}} = 
+        \int \frac{\mathrm{d}t}{t-1+\sqrt{t^2+1}}.
+        \]
+\end{example}
+\begin{proof}
+    Setting $\displaystyle \sqrt{t^2+1} = u - t.$
+\end{proof}
+\paragraph{\rm \textbf{c.Elliptic integrals.}} 
+Another important class of integrals consists of those of the form 
+\begin{equation}
+    \int R(x,\sqrt{P(x)})\mathrm{d}x
+    \label{eq:eq5}
+\end{equation}
+where $P(x)$ is a polynomial of degree of $n>2$. As Abel and Liouville 
+showed, such an integral cannot in general be expressed in terms of 
+elementary function.
+
+For $n = 3$ and $n = 4$ the integral~\ref{eq:eq5} is called an 
+\textbf{elliptic integral,} and for $n > 4$ it is called \textbf{hyperelliptic.}
+
+It can be shown that by elementary substitutions the general 
+elliptic integral can be reduced to the following three standard 
+forms up to terms expressible in elementary functions:
+\begin{equation}
+    \int \frac{\mathrm{d}x}{\sqrt{(1-x^2)(1-k^2x^2)}}
+\end{equation}
+\begin{equation}
+    \int \frac{x^2\mathrm{d}x}{\sqrt{(1-x^2)(1-k^2x^2)}}
+\end{equation}
+\begin{equation}
+    \int \frac{\mathrm{d}x}{(1+hx^2)\sqrt{(1-x^2)(1-k^2x^2)}}
+\end{equation}
+where $h$ and $k$ are parameters, the parameter $k$ lying in the interval 
+$]0,1[$ in all three cases.
+
+By the substitution $x = \sin \varphi$ these integrals can be reduced to 
+the following canonical integrals and combinations of them:
+\begin{equation}
+    \int \frac{\mathrm{d}\varphi}{\sqrt{1-k^2\sin^2\varphi}}
+    \label{eq:eq6}
+\end{equation}
+\begin{equation}
+    \int \sqrt{1 - k^2\sin^2\varphi}\mathrm{d}\varphi
+    \label{eq:eq7}
+\end{equation}
+\begin{equation}
+    \int \frac{\mathrm{d}\varphi}{(1-h\sin^2\varphi)\sqrt{1-k^2\sin^2\varphi}}
+    \label{eq:eq8}
+\end{equation}
+
+The integrals ~\ref{eq:eq6}, \ref{eq:eq7} and \ref{eq:eq8} are 
+called respectively the elliptic integral of \textbf{first kind}, 
+\textbf{second kind} and \textbf{third kind}.
+
+The following non-elementary special functions.
+\begin{enumerate}
+    \normalfont
+    \item $\displaystyle Ei(x) = \int \frac{e^x}{x}\mathrm{d}x $,
+        the exponential integral.
+    \item $ \displaystyle Si(x) = \int \frac{\sin x}{x}\mathrm{d}x$,
+        the sine integral.
+    \item $\displaystyle Ci(x) = \int \frac{\cos x}{x}\mathrm{d}x$,
+        the cosine integral.
+    \item $\displaystyle Chi(x) = \int \frac{\cosh x}{x}\mathrm{d}x $,
+        the hyperbolic cosine integral.
+    \item $\displaystyle Shi(x) = \int \frac{\sinh x}{x}\mathrm{d}x $,
+        the hyperbolic sine integral.
+    \item $\displaystyle S(x) = \int \sin x^2\mathrm{d}x$ , the Fresnel integral.
+    \item $\displaystyle C(x) = \int \cos x^2\mathrm{d}x$ , the Fresnel integral.
+    \item $\displaystyle \Phi(x) = \int e^{-x^2}\mathrm{d}x$ , 
+        the Euler-Poission integral.
+    \item $\displaystyle li(x) = \int \frac{\mathrm{d}x}{\ln x}$ ,
+        the logarithmic integral.
+\end{enumerate}
+\end{document}

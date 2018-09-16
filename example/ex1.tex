@@ -1,0 +1,52 @@
+\documentclass[11pt,openany]{book}
+
+\title{Endnotes using pagenote package at the end of each chapter}
+
+\usepackage{pagenote}
+
+%% End notes to be printed as sections at the
+%% end of each chapter.
+\renewcommand*{\notedivision}{\section*{\notesname}}
+\renewcommand*{\pagenotesubhead}[1]{}
+
+
+%%%%%%%%%%%%% For customising the endnote markers. Comment these out if you don't want them.
+% To prefix each note number with the chapter number
+\renewcommand{\thepagenote}{\thechapter-\arabic{pagenote}}
+
+% To have a slightly different formatting for the endnote numbers in the text -- smaller text, sans-serif, square brackets
+\renewcommand\notenumintext[1]{\space{\footnotesize\sffamily[FN-#1]}}
+
+% To have a slightly different formatting for the endnote numbers in the notes section. Just the square brackets and sans-serif; normal size.
+\renewcommand\notenuminnotes[1]{{\sffamily[FN-#1] }}
+
+% If you want a different name/heading for the end notes
+\renewcommand{\notesname}{End Notes}
+%%%%%%%%%%%%% End customisation
+
+
+%% THIS LINE IS MANDATORY
+\makepagenote
+
+\begin{document}
+
+\chapter{Introduction}
+
+Lorem ipsum dolor sit amet, vocent intellegebat at has, ius alienum sententiae ea, dissentiet intellegebat et sea.\pagenote{Eu option mediocrem aliquando sit, te ius sanctus nominati.} Pro ei errem atomorum, at mei copiosae qualisque. Ad pro elit animal partiendo. Senserit adolescens pro ad.
+
+Pri an saepe integre ceteros, usu democritum posidonium necessitatibus ne.\pagenote{Cum fabellas pericula consequat ne, ea eros eripuit eam.} Mei et nisl rebum audiam. Qui utamur fuisset electram ex. Est ne dicat simul vivendum, augue patrioque pri cu, idque ludus vis at. In nobis tractatos nam.
+
+Sale mollis qualisque eum id, molestie constituto ei ius. Duis mediocrem signiferumque vis no, quas nihil qui no, pro ex ocurreret referrentur. Mel no odio meliore noluisse. Soleat adipisci periculis et est, vix purto magna oporteat ex. Enim quaestio signiferumque mea an, id regione graecis nam, impetus erroribus percipitur at nec. An vis dolore maiorum repudiare, ea vel munere vivendo fabellas.
+
+\printnotes*
+
+
+\chapter{Continuing on}
+
+Ex blandit voluptatum sit. Cu duo aeque tractatos, solet expetenda voluptaria pri te. Mutat movet dicit vel ne, an est graeci percipitur, an sumo eloquentiam sea. Eos gloriatur maiestatis no, aliquip copiosae vulputate et usu.\pagenote{Ut pro solum explicari, nam copiosae vivendum te, an sed senserit electram ullamcorper.} Mucius repudiare ne mei.
+
+Sit ei option sapientem laboramus, quo eu reque ancillae repudiare. Quo impedit deserunt sapientem an. Recusabo deseruisse ei eam, vis ignota pericula at. Mea erat erroribus persequeris id. Ea alterum lucilius abhorreant mel, sed animal impedit docendi ne.
+
+\printnotes*
+
+\end{document}

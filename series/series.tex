@@ -1,0 +1,560 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\newtheorem{example}{例子}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注}
+\let\oldref\ref
+\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{CJK}{UTF8}{gbsn}
+\begin{document}
+\title{数项级数}
+\author{武国宁}
+\date{}
+\maketitle
+
+\section{简介}
+    早在公元前450年，古希腊有一位名叫Zeno的学者，曾提出若干个在
+数学发展史上产生过重大影响的悖论，"Achilles（希腊神话中的英雄）
+追赶乌龟"即是其中较为著名的一个。
+    
+    有限$-->$ 无限。
+    
+    这种“无限多个数相加，相乘是否一定有意义？若不一定，怎么来判
+別，无限多个数相加是否符合交换律，结合律等等。对于无限多个函数，
+.......
+
+\section{数项级数的收敛性}
+\subsection{数项级数}
+    设$x_1, x_2, \cdots, x_n, \cdots$ 是无限可列个实数，则称
+\[
+        x_1 + x_2 + \cdots + x_n + \cdots
+\]
+为无穷项级数（简称级数），记为$\sum_{n=1}^{\infty} x_n$,
+其中，$\displaystyle x_n$ 称为级数的通项或一般项。
+
+    数项级数的部分和数列${S_n}$定义为：
+\[
+    \begin{split}
+        S_1 &= x_1 \\
+        S_2 &= x_1 + x_2 \\
+    \vdots\\
+        S_n &= x_1 + x_2 + \cdots + x_n
+    \end{split}
+    \]
+\begin{definition}
+    如果部分和数列${S_n}$ 收敛于有限数$S$，则称无穷级数
+    $\displaystyle \sum_{n=1}^{\infty}$ 收敛，且和为$S$ ，记为：
+    \[
+        S = \sum_{n=1}^{\infty} x_n
+        \]
+    如果部分和数列发散，则称无穷级数发散。
+\end{definition}
+\begin{example}
+    设$|q| < 1$, 讨论几何级数（等比级数）
+    \[
+        \sum_{n=1}^{\infty} q^{n-1} = 1 + q + q^2 + \cdots + q^n + \cdots
+        \]
+    的敛散性。
+\end{example}
+\begin{example}
+    讨论级数：
+    \[
+        \sum_{n=1}^{\infty} (-1)^{n-1} = 1 - 1 + 1 + \cdots + 
+        (-1)^{n-1} + \cdots
+        \]
+    的敛散性。
+\end{example}
+\begin{theorem}
+    级数$\displaystyle \sum_{n=1}^{\infty} u_n$ 收敛的充分必要条件为：
+    任给$\epsilon>0$，总存在正数$N$，使得当$m > N$ 以及对于任意的正整数$p$，
+    都有：
+    \[
+        \left| u_{m+1} + u_{m+2} + \cdots + u_{m+p} \right| < \epsilon.
+        \]
+\end{theorem}
+\begin{example}
+    讨论级数：
+    \[
+        \sum_{n=1}^{\infty} \frac{1}{n^p} = 1 + \frac{1}{2^p} + \cdots + 
+        \frac{1}{n^p} + \cdots
+        \]
+    的敛散性。
+\end{example}
+
+\subsection{级数收敛的基本性质}
+\begin{theorem}
+    设级数$\displaystyle \sum_{n=1}^{\infty} u_n$ 收敛，则有：
+    \[
+        \lim_{n \to \infty} u_n = 0
+        \]
+\end{theorem}
+\begin{theorem}
+    设级数$\displaystyle \sum_{n=1}^{\infty} u_n$ ,$\displaystyle \sum_{n=1}^{\infty} v_n$ 收敛，
+    则对于任意的常数$\alpha, \beta$，级数$\displaystyle \sum_{n=1}^{\infty} \alpha u_n + \beta v_n$ 
+    收敛，且有：
+    \[
+        \displaystyle \sum_{n=1}^{\infty}  \left(\alpha u_n + \beta v_n  \right) 
+        =\alpha \sum_{n=1}^{\infty} + \beta \sum_{n=1}^{\infty} v_n
+        \]
+\end{theorem}
+\begin{theorem}
+    去掉，增加或改变级数的有限项不影响级数的敛散性。
+\end{theorem}
+\begin{theorem}
+    在收敛级数中任意加括弧，既不改变级数的收敛性，也不改变级数的和。
+\end{theorem}
+
+\begin{example}
+    讨论级数
+    \[
+        \frac{1}{\sqrt{2} - 1} - \frac{1}{\sqrt{2} + 1} + 
+        \frac{1}{\sqrt{3} - 1} - \frac{1}{\sqrt{3} + 1} + 
+        \cdots + \frac{1}{\sqrt{n} - 1} - \frac{1}{\sqrt{n} + 1} + 
+        \cdots +
+        \]
+    的敛散性。
+\end{example}
+
+\begin{example}
+    讨论级数：
+    \[
+        \sum_{n=1}^{\infty} \frac{2n - 1}{2^n}
+        \]
+    的敛散性。
+\end{example}
+\begin{example}
+    讨论级数：
+    \[
+        \sum_{n=1}^{\infty} \arctan\frac{1}{2n^2}
+        \]
+    的敛散性。
+    提示：
+    \[
+        \arctan x - \arctan y = \arctan \frac{x - y}{1 + xy}
+        \]
+    \[
+        \arctan \frac{1}{2n^2} = \arctan \frac{1}{2n-1} - 
+        \arctan \frac{1}{2n + 1}
+        \]
+\end{example}
+
+\subsection{作业}
+\subsubsection{证明下列级数收敛，并求其和}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \left(\frac{1}{2} + \frac{1}{3}\right) + 
+        \left(\frac{1}{2^2} + \frac{1}{3^2}\right) + \cdots + 
+        \left(\frac{1}{2^n} + \frac{1}{3^n}\right)$
+    \item$ \displaystyle \sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}$ 
+    \item$ \displaystyle \sum_{n=1}^{\infty} \left(\sqrt{n+2} - 2\sqrt{n+1}
+        + \sqrt{n} \right)$ 
+\end{enumerate}
+
+\subsubsection{证明题}
+证明：若数列$\left\{a_n\right\}$收敛于$a$，则级数$\displaystyle \sum_{n=1}^{\infty} \left( a_n - 
+a_{n+1}\right) = a_1 - a$.  
+\subsubsection{证明题}
+证明：若数列$\left\{b_n\right\}$ 有$ \displaystyle \lim_{n \to \infty} b_n = \infty$, 则：
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item 级数$\displaystyle \sum_{n=1}^{\infty} \left(b_{n+1} - b_n\right)$发散；
+    \item 当$\displaystyle b_n \ne 0$时，级数$\displaystyle \sum_{n = 1} ^{\infty} 
+        \left( \frac{1}{b_n} - \frac{1}{b_{n+1}}\right) = \frac{1}{b_1}$.
+\end{enumerate}
+\subsubsection{利用上述结果求下列级数的和}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum_{n=1}^{\infty} \frac{1}{(a+n-1)(a+n)}$
+    \item $\displaystyle \sum_{n=1}^{\infty} (-1)^{n+1} \frac{2n+1}{n(n+1)}$
+\end{enumerate}
+
+\subsubsection{应用柯西收敛原理证明下列级数的敛散性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum_{n=1}^{\infty} \frac{\sin 2^n}{2^n}$
+    \item $\displaystyle \sum_{n=1}^{\infty} \frac{1}{\sqrt{n+n^2}}$
+\end{enumerate}
+ 
+\section{正向级数}
+\subsection{正向级数收敛性的一般判别法则}
+    若数项级数的各项符号相同，则称它为同号级数。对于同号级数，
+只需研究各项都是正数组成的级数--正项级数。
+\begin{theorem}
+    正向级数$\displaystyle \sum u_n$ 收敛的充要条件是：部分和数列
+    $\displaystyle \left\{S_n\right\}$有界。
+\end{theorem}
+\begin{theorem}
+    设$\displaystyle \sum u_n, \sum v_n$ 是两个正向级数，如果存在
+    某个正数$N$ ，对于一切$n > N$，都有：
+    \[
+        u_n \le v_n
+        \]
+    则：
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item 若级数$\displaystyle \sum v_n$ 收敛，则级数$\displaystyle \sum u_n$ 收敛；
+        \item 若级数$\displaystyle \sum u_n$ 发散，则级数$\displaystyle \sum v_n$ 发散。
+    \end{enumerate}
+\end{theorem}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \frac{1}{n^2 - n + 1}$的敛散性。
+\end{example}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \sin \frac{\pi}{n}$的敛散性。
+\end{example}
+
+\begin{corollary}
+    设$\displaystyle \sum u_n, \sum v_n$ 是两个正向级数，如果
+    \[
+        \lim_{n \to \infty} \frac{u_n}{v_n} = l
+        \]
+    则：
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item 当$0 < l < \infty$，则级数$\displaystyle \sum v_n, \sum u_n$ 同时收敛或
+            同时发散；
+        \item 当$l = 0$，级数$\displaystyle \sum u_n$ 收敛时，则级数
+            $\displaystyle \sum v_n$ 收敛;
+        \item 当$l = +\infty$，级数$\displaystyle \sum u_n$ 发散时，则级数
+            $\displaystyle \sum v_n$ 发散;
+    \end{enumerate}
+\end{corollary}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \frac{1}{2^n-1}$的敛散性。
+\end{example}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \sin \frac{1}{n}$的敛散性。
+\end{example}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \left(1 - \cos \frac{\pi}{n}\right)$的敛散性。
+\end{example}
+
+\subsection{比值判别法和根值判别法}
+\begin{theorem}
+    设$\displaystyle \sum u_n$ 为正项级数，且存在某正数$N_0$及常数
+    $q (0 < q < 1).$ 
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item  对于一切$n > N_0$，成立不等式
+            \[
+                \frac{u_{n+1}}{u_n} \le q
+                \]
+        则级数$\displaystyle \sum u_n$ 收敛。
+        \item  对于一切$n > N_0$，成立不等式
+            \[
+                \frac{u_{n+1}}{u_n} \ge 1
+                \]
+        则级数$\displaystyle \sum u_n$ 发散。
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    设$\displaystyle \sum u_n$ 为正项级数，且
+    \[
+        \lim_{n \to \infty} \frac{u_{n+1}}{u_n} = q
+        \]
+    则，
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item  当$q < 1$，则级数$\displaystyle \sum u_n$ 收敛。
+        \item  当$q > 1$ 或$q = \infty$，则级数$\displaystyle \sum u_n$ 发散。
+    \end{enumerate}
+\end{corollary}
+
+\begin{example}
+    讨论级数$\displaystyle \sum nx^{n-1}(x>0)$ 的敛散性。
+\end{example}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \frac{n!}{n^n}$ 的敛散性。
+\end{example}
+
+\begin{theorem}
+    设$\displaystyle \sum u_n$ 为正项级数，且存在某正数$N_0$及常数
+    $q (0 < q < 1).$ 
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item  对于一切$n > N_0$，成立不等式
+            \[
+                \sqrt[n]{u_n} \le q
+                \]
+        则级数$\displaystyle \sum u_n$ 收敛。
+        \item  对于一切$n > N_0$，成立不等式
+            \[
+                \sqrt[n]{u_n} \ge 1
+                \]
+        则级数$\displaystyle \sum u_n$ 发散。
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    设$\displaystyle \sum u_n$ 为正项级数，且
+    \[
+        \lim_{n \to \infty} \sqrt[n]{u_n} = q
+        \]
+    则，
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item  当$q < 1$，则级数$\displaystyle \sum u_n$ 收敛。
+        \item  当$q > 1$，则级数$\displaystyle \sum u_n$ 发散。
+    \end{enumerate}
+\end{corollary}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \frac{2 + (-1)^n}{2^n}$ 的敛散性。
+\end{example}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \frac{x^n}{1 + x^{2n}}$ 的敛散性。
+\end{example}
+
+\begin{example}
+    讨论下列级数的敛散性$\displaystyle \sum \frac{(n!)^2}{(2n)!}$ ,
+    $\displaystyle \sum \frac{n^2}{\left(2 + \frac{1}{n}\right)^n}$
+\end{example}
+
+\subsection{积分判别法}
+\begin{theorem}
+    设 $f$ 为 $[1, +\infty)$ 上非负递减函数，那么正向级数$\sum f(n)$ 
+    与反常积分 $\displaystyle \int_1^{+\infty} f(x)\,\mathrm{d}x$
+    同时收敛或发散。
+\end{theorem}
+
+\begin{example}
+    讨论级数$\displaystyle \sum \frac{1}{x^p}$ 的敛散性。
+\end{example}
+
+\begin{example}
+    讨论下列级数的敛散性$\displaystyle \sum \frac{1}{n\left(\ln n\right)^n}$ ,
+    $\displaystyle \sum \frac{1}{n \ln n \left(\ln \ln n\right)^n}$
+\end{example}
+
+\subsection{作业}
+\subsubsection{判别下列级数的敛散性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{1}{n^2 + a^2}$
+    \item $\displaystyle \sum 2^n\frac{\pi}{3^n}$
+    \item $\displaystyle \sum \frac{\pi}{n\sqrt[n]n}$
+    \item $\displaystyle \sum \frac{(n+1)!}{10^n}$
+    \item $\displaystyle \sum \frac{n^2}{2^n}$
+\end{enumerate}
+
+\subsubsection{采用积分判别法判别下列级数的敛散性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{1}{n^2 + 1}$
+    \item $\displaystyle \sum \frac{n}{n^2 + 1}$
+\end{enumerate}
+
+\subsubsection{证明题}
+设$\displaystyle a_n \ge 0, n = 1,2, \cdots$ 且$\displaystyle \left\{na_n\right\}$
+有界，证明$\displaystyle a_n^2$收敛。 
+
+\section{一般项级数}
+\subsection{交错项级数}
+若级数的各项符号正负相间，即：
+\begin{equation}
+    u_1 - u_2 + u_3 - u_4 + \cdots + (-1)^{n-1}u_n + \cdots \left(u_n > 0, n = 1, 2, \cdots\right)
+    \label{eq:eq1}
+\end{equation}
+\begin{theorem}{\rm\textbf{(莱布尼茨判别法)}}
+    若交错级数\ref{eq:eq1}满足下述两个条件：
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item 数列$\displaystyle u_n$单调递减；
+        \item $\displaystyle \lim_{n \to \infty} u_n = 0.$
+    \end{enumerate}
+    则级数\ref{eq:eq1}收敛。
+\end{theorem}
+\begin{proof}
+    利用单调有界原理。
+\end{proof}
+
+\begin{corollary}
+    若级数\ref{eq:eq1}满足莱布尼茨判别法的条件，则级数\ref{eq:eq1}
+    的余项估计式为：
+    \[
+        \left|R_n\right| \le u_{n+1}
+        \]
+\end{corollary}
+
+\begin{example}
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        
+        \item $\displaystyle 1 - \frac{1}{2} + \frac{1}{3} + \cdots + 
+            (-1)^{n-1}\frac{1}{n} + \cdots,$
+        \item $\displaystyle 1 - \frac{1}{3!} + \frac{1}{5!} + \cdots + 
+            (-1)^{n+1}\frac{1}{2n-1} + \cdots,$
+        \item $\displaystyle \frac{1}{10} - \frac{2}{10^2} + \frac{3}{10^3} + \cdots + 
+            (-1)^{n-1}\frac{n}{10^n} + \cdots$
+    \end{enumerate}
+\end{example}
+
+\subsection{绝对收敛级数及其性质}
+若级数
+\begin{equation}
+    u_1 + u_2 + \cdots + u_n + \cdots 
+    \label{eq:eq2}
+\end{equation}
+各项的绝对值组成的级数
+\begin{equation}
+    \left| u_1 \right| + \left| u_2 \right| + \cdots + \left| u_n \right| + \cdots 
+    \label{eq:eq3}
+\end{equation}
+收敛，则称级数\ref{eq:eq3}为绝对收敛级数。
+
+\begin{theorem}
+    绝对收敛的级数一定收敛。
+\end{theorem}
+
+\begin{example}
+    讨论级数
+    \[
+        \sum_{n=1}^{\infty} \frac{\alpha^n}{n!} = \alpha + \frac{\alpha^2}{2!} + \cdots +
+        \frac{\alpha^n}{n!}
+        \]
+    的绝对收敛（讨论$\alpha$取值范围）。
+\end{example}
+
+\begin{remark}{\rm 级数的重排}
+    我们把正整数列：$\displaystyle \left\{1, 2, 3, \cdots, n, \cdots\right\}$
+    到它自身的一个映射$\displaystyle f: n \to k(n)$
+    称为整整数列的重排，相应的对于数列$\displaystyle \left\{u_n\right\} $
+    按照映射$\displaystyle F: u_n \to u_{k(n)}$所得到的数列
+    $\displaystyle \left\{u_{k(n)}\right\}$称为原级数的重排。为叙述方便，记
+    $\displaystyle v_n = u_{k(n)}$, 即级数$\displaystyle \sum_{n=1}^{\infty} u_{k(n)}$
+    写作：
+    \begin{equation}
+        v_1 + v_2 + \cdots + v_n + \cdots
+        \label{eq:eq4}
+    \end{equation}
+\end{remark}
+\begin{theorem}
+    级数\ref{eq:eq2}绝对收敛，且和等于$S$，则任意重排后得到的级数
+    \ref{eq:eq4}也绝对收敛，且有相同的和数。
+\end{theorem}
+
+\begin{remark}
+    由条件收敛的级数重排后得到新的级数，即使收敛，也不一定收敛到
+    原来的和数。一般的，对于条件收敛的级数，可以通过重排收敛于任
+    意事先指定的实数。
+\end{remark}
+
+\subsection{阿贝尔判别法与狄利克雷判别法}
+\begin{remark}
+In mathematics, summation by parts transforms the summation 
+of products of sequences into other summations, often simplifying the 
+computation or (especially) estimation of certain types of sums. 
+The summation by parts formula is sometimes called Abel's 
+lemma or Abel transformation.
+
+Suppose $\left\{f_k\right\} $and $\displaystyle \left\{g_k\right\}$ are two sequences.
+Then,$\displaystyle \sum_{k=m}^n f_k(g_{k+1}-g_k) = \left[f_{n}g_{n+1} - f_m g_m\right] 
+- \sum_{k=m+1}^n g_{k}(f_{k}- f_{k-1}).$
+Using the forward difference operator $\displaystyle \Delta$, it can be stated 
+more succinctly as $\displaystyle \sum_{k=m}^n f_k\Delta g_k = \left[f_{n} g_{n+1} 
+- f_m g_m\right] - \sum_{k=m}^{n-1} g_{k+1}\Delta f_k,$
+Note that summation by parts is an analogue to the integration by parts formula,
+$\displaystyle \int f\,dg = f g - \int g\,df.$
+\end{remark}
+
+\begin{lemma}{\rm (阿贝尔变换)}
+    设$a_i, b_i (i=1,2,\cdots,n)$ 为两组实数，若令
+    \[
+        B_k = b_1 + b_2 + \cdots + b_k (k = 1,2,\cdots,n)
+        \]
+    则有：
+    \begin{equation}
+        \sum_{i=1}^n a_ib_i = (a_1-a_2)B_1 + (a_2-a_3)B_2 + \cdots + (a_{n-1}-a_n)B_{n-1}+a_nB_n
+        \label{eq:eq5}
+    \end{equation}
+\end{lemma}
+
+\begin{corollary}{\rm(阿贝尔引理)}
+    若
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $\displaystyle a_1, a_2, \cdots, a_n$ 是单调数组；
+        \item  对于任意正整数$\displaystyle k(1 \le k \le n)$ 有
+            $\displaystyle \left|B_k\right| \le M $\rm(这里$\displaystyle B_k = b_1 + b_2 + \cdots + b_k$)，
+            记$\epsilon  = \max_k\left\{\left|a_k\right|\right\}$
+        则有：
+            \begin{equation}
+                \left|\sum_{k=1}^na_kb_k\right| \le 3 \epsilon M.
+                \label{eq:eq6}
+            \end{equation}
+    \end{enumerate}
+\end{corollary}
+
+现在讨论级数
+\begin{equation}
+    \sum_{k=1}^{\infty} a_kb_k  = a_1b_1 + a_2b_2 + \cdots + a_nb_n  + \cdots
+    \label{eq:eq7}
+\end{equation}
+收敛性的判别法。
+
+\begin{theorem}{\rm (阿贝尔判别法)}
+    若$\displaystyle \left\{a_n\right\}$为单调有界数列，且级数
+    $\displaystyle \sum b_n$ 收敛，则级数\ref{eq:eq7}收敛。
+\end{theorem}
+
+\begin{theorem}{\rm (狄利克雷判别法)}
+    若$\displaystyle \left\{a_n\right\}$为单调递减，且$\displaystyle \lim_{n \to \infty} a_n = 0$, 
+    $\displaystyle \sum b_n$ 的部分和数列有界，则级数\ref{eq:eq7}收敛。
+\end{theorem}
+
+\begin{example}
+    设数列$\displaystyle \left\{a_n\right\}$具有性质：
+    \[
+        a_1 \ge a_2 \ge \cdots \ge a_n \ge \cdots, \lim_{n \to \infty} a_n = 0
+        \]
+     则级数$\displaystyle \sum a_n \sin nx, \sum a_n \cos nx$对于任意 
+     $x \in (0, 2\pi)$都收敛。
+     特别的，级数
+    \[
+        \sum\frac{\sin nx}{n}, \sum\frac{\cos nx}{n}
+        \]
+    对一切$x \in (0, 2\pi)$都收敛。
+\end{example}
+
+\begin{example}
+    讨论级数
+    \[
+        \sum_{n=1}^{\infty} \frac{\sin nx}{n^p}(0 < x < \pi)
+        \]
+    的敛散性。
+\end{example}
+
+\subsection{作业}
+\subsubsection{下列级数那些条件收敛，那些绝对收敛，那些发散}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{\sin nx}{n!}$
+    \item $\displaystyle \sum (-1)^n\frac{n}{n+1}$
+    \item $\displaystyle \sum (-1)^n\frac{\ln (n+1)}{n+1}$
+    \item $\displaystyle \sum n! \left(\frac{x}{n}\right)^n$
+\end{enumerate}
+\subsubsection{应用阿贝尔和狄利克雷方法，判断下列级数的敛散}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{(-1)^n}{n}\frac{x^n}{x^n+1}, (x > 0)$
+    \item $\displaystyle \sum \frac{\sin nx}{n^{\alpha}}, x\in(0,2\pi), 
+        \alpha > 0$
+    \item $\displaystyle \sum (-1)^n\frac{\cos^2n}{n}$
+\end{enumerate}
+
+
+
+
+
+
+\end{CJK}
+\end{document}
+
+\end{CJK}
+\end{document}
