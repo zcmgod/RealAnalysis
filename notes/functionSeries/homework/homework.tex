@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\newtheorem{example}{例子}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注}
+\let\oldref\ref
+\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{CJK}{UTF8}{gbsn}
+\begin{document}
+\title{Homework}
+\author{武国宁}
+\date{}
+\maketitle
+
+\section{讨论下列函数列在所示区间上是否一致收敛或内闭一致收敛，说明理由}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle f_n(x) = \frac{x}{1 + n^2x^2}, n = 1,2, \cdots, D \in (-\infty, +\infty)$
+    \item $\displaystyle f_n(x) = \left\{\begin{array}{cl} 
+             -(n+1)x+1, & 0 \le x \le \frac{1}{n+1}, \\
+             0        , & \frac{1}{n+1} < x <1. 
+            \end{array} \right.$
+          $\displaystyle n = 1,2, \cdots$
+      \item $\displaystyle f_n(x) = \sin \frac{x}{n}, n = 1, 2, \cdots,
+          D \in \left(-\infty, +\infty\right)$
+\end{enumerate}
+
+\section{判别下列函数项级数在所示区间上的一致收敛性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{x^n}{n+1}, x \in [-r, r]$
+    \item $\displaystyle \sum \frac{(-1)^{n-1}x^2}{(1+x^2)^n}, x \in 
+        \left(-\infty, +\infty\right)$
+    \item $\displaystyle \sum \frac{x^n}{n^2}, x \in [0,1]$
+    \item $\displaystyle \sum \frac{x^2}{(1+x^2)^{n-1}}, x \in 
+        \left(-\infty, +\infty\right)$
+\end{enumerate}
+\section{证明题}
+证明：$\displaystyle f_n(x)$在区间$I$上内闭一致收敛于$f$的充分且必要条件是：
+对于任意$x_0 \in I$，存在$x_0$的一个邻域$\displaystyle U(x_0)$，使得
+$\displaystyle \left\{f_n(x)\right\}$在$\displaystyle U(x_0) \cap I$上一致收敛于$f$.
+
+\end{CJK}
+\end{document}

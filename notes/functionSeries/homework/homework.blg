@@ -1,12 +1,12 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: introduction.aux
-I found no \citation commands---while reading file introduction.aux
-I found no \bibdata command---while reading file introduction.aux
-I found no \bibstyle command---while reading file introduction.aux
+The top-level auxiliary file: homework.aux
+I found no \citation commands---while reading file homework.aux
+I found no \bibdata command---while reading file homework.aux
+I found no \bibstyle command---while reading file homework.aux
 You've used 0 entries,
             0 wiz_defined-function locations,
-            83 strings with 498 characters,
+            83 strings with 490 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0

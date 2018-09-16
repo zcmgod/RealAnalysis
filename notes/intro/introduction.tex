@@ -1,7 +1,4 @@
 \documentclass[a4paper,12pt]{article} % declaration
-
-% packages
-
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -11,11 +8,13 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{color}
+\usepackage{amsthm}
 
 %\def\pgfsysdriver{pgfsys-dvipdfmx.def}
 \usepackage{tikz}
 
 \newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -25,6 +24,7 @@
 \author{Guoning Wu}
 
 \begin{document}
+\graphicspath{{../Figs/}}
 
 %\tableofcontents
 \setcounter{tocdepth}{2}
@@ -218,7 +218,171 @@ Let $X$ and $Y$ be certain sets. We say that there is a function defined
 on $X$ with values in $Y$ if, by virtue of some rule $f$, to each element 
 $x \in X$ there corresponds an element $y \in Y$. In this case the set $X$
 is called the {\color{red} \textbf{domain}} of the function.
-The symbol 
+The symbol $x$ used to denote a general element of the domain is 
+called the argument of the function. The element $y_0 \in Y$ corresponding 
+to a particular value $x_0 \in X$ is called the value of the function 
+at $x_0$, and is denoted as $f(x_0)$. As the argument $x \in X$ varies, the value
+$y = f(x) \in Y$, in general, varies depending on the values of $x$.
+For that reason, the quality $y = f(x)$ is often called the dependent 
+variable.
+
+The set 
+\[
+    f(X) = \left\{y \in Y \vert \exists x, x \in X \wedge y = f(x) \right\}
+\]
+of values assumed by a function on elements of the set $X$ will 
+be called the set of values or the range of the function.
+
+For a function the following notations are standard:
+\[
+    f: X \to Y,  X \xrightarrow{f} Y
+    \]
+
+Two functions (mapping) $f_1$ and $f_2$ are identical or equal 
+if the have the same domain $X$ and each element $x \in X$ the values 
+$f_1(x)$ and $f_2(x)$ are the same. In this case we write $f_1 = f_2$.
+
+\begin{example}
+    The formulas $l = 2\pi r$ and $V = \frac{4}{3}\pi r^3$ establish 
+    functional relationships between the circumference $l$
+    of a circle and its radius $r$ and between the volume $V$
+    of a ball and its radius $r$. Each of these formulas provides 
+    a particular function $f: \mathbb{R}_+ \to \mathbb{R}_+$
+    defined on the set $\mathbb{R}_+$ of the positive real numbers 
+    with values in the same set.
+\end{example}
+
+\begin{example}
+    The mapping $G: \mathbb{R}^2 \rightarrow \mathbb{R}^2$ (the direct product 
+    $\displaystyle \mathbb{R}^2 = \mathbb{R} \times mathbb{R} = \mathbb{R}_t 
+    \times \mathbb{R}_x$) into itself defined by the foumulas:
+    \[
+    \begin{array}{ll}
+        x' & = x - vt \\
+        t' & = t
+    \end{array}
+    \]
+   is the classical Galilean transformation for transition from 
+    one inertial coordinate system $(x,t)$ to another system $(x', t')$
+    that is in motion relative to the first speed $v$.
+
+    The same purpose is served by the mapping $L: \mathbb{R}^2 
+    \to \mathbb{R}^2$ defined by the relations:
+    \[
+    \begin{array}{ll}
+        x' = \frac{x - vt}{\sqrt{1 - \left(\frac{v}{c}\right)^2}},\\
+        t' = \frac{t - \frac{v}{c^2}x}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
+     \end{array}
+     \]
+     is the well known (one-dimensional) Lorentz transformation,
+     which play a fundamental role in the special theory of
+     relativity. The speed $c$ is the speed of light.
+\end{example}
+
+\begin{example}
+    The projection $pr_1: X_1 \times X_2 \to X_1$ and $pr_2: X_1 \times X_2 \to X_2$
+    are obvious functions.
+\end{example}
+
+\subsection{Elementary Classification of Mapping}
+A mapping $f: X \to Y$ is said to be 
+
+{\color{red} surjective} if $f(X) = Y$;
+
+{\color{red} injective} if for any elements $x_1, x_2 \in X$
+\[
+    f(x_1) = f(x_2) \Rightarrow x_1 = x_2
+    \]
+
+{\color{red} bijective} if it is both surjective and injective.
+
+\subsection{Some Special Functions}
+\begin{example}{The absolute value function}
+    \[
+        \left|x\right| = \left\{ \begin{array} {cc}
+                          x, & x \ge 0 \\
+                         -x, & x < 0
+        \end{array}\right.
+        \]
+\end{example}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{absolutefun.png}
+    \caption{The absolute function.}
+    \label{fig:absolutefun}
+\end{figure}
+
+\begin{example}{The Greatest Integer Function}
+    This function whose value at any number $x$ is the greatest 
+    integer less than or equal to $x$ is called the greatest 
+    integer function or the integer floor function. It is 
+    denoted as $\lfloor x \rfloor$
+\end{example}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{gintfun.png}
+    \caption{The greatest integer function.}
+    \label{fig:gintfun}
+\end{figure}
+
+\begin{example}{The Least Integer Function}
+    This function whose value at any number $x$ is the smallest 
+    integer great than or equal to $x$ is called the leastest 
+    integer function or the integer ceiling function. It is 
+    denoted as $\lceil x \rceil$
+\end{example}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{lintfun.png}
+    \caption{The least integer function.}
+    \label{fig:lintfun}
+\end{figure}
+
+\begin{example}{The Sign Function or Signum Function}
+    The signum function of a real number $x$ is defined as 
+    follows:
+    \[
+        \rm{sgn} (x) = \left\{\begin{array}{cc} 
+                   -1,  & x < 0\\
+                    0,  & x = 0\\
+                    1,  & x = 1
+        \end{array}\right.
+        \]
+\end{example}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{signumfun.png}
+    \caption{The singnum function.}
+    \label{fig:singnum}
+\end{figure}
+
+\begin{example}{The Dirichlet Function}
+    \[
+        \rm D(x) = \left\{\begin{array}{cc} 
+            1, & x \in \mathbb{Q},\\
+            0, & x \in \mathbb{R} \setminus \mathbb{Q}
+        \end{array}\right.
+        \]
+\end{example}
+
+\begin{example}{The Riemann Function}
+    \[
+        \rm R(x) = \left\{ \begin{array}{cc} 
+            \frac{1}{q}, & x = \frac{p}{q}, p, q \in \mathbb{Z}^+, (p, q) = 1\\
+                   0,    & x = 0, 1, (0,1) \setminus \mathbb{Q}
+        \end{array}\right.
+        \]
+\end{example}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{rimannfun.pdf}
+    \caption{The Rimann function.}
+    \label{fig:rimann}
+\end{figure}
+
+
 
 
 \section{The Real Numbers}
