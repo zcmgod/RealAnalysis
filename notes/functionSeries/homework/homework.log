@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  16 SEP 2018 22:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  17 SEP 2018 00:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -573,14 +573,14 @@ File: c70gbsn.fdx 2015/04/18 4.8.4
 )
 [1
 
-] (./homework.aux) ) 
+] [2] (./homework.aux) ) 
 Here is how much of TeX's memory you used:
- 3662 strings out of 493090
- 43071 string characters out of 6134868
- 119877 words of memory out of 5000000
- 7034 multiletter control sequences out of 15000+600000
- 23887 words of font info for 88 fonts, out of 8000000 for 9000
+ 3710 strings out of 493090
+ 43777 string characters out of 6134868
+ 118083 words of memory out of 5000000
+ 7080 multiletter control sequences out of 15000+600000
+ 26078 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,43p,10355b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,8n,43p,5721b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework.dvi (1 page, 5228 bytes).
+Output written on homework.dvi (2 pages, 6640 bytes).
