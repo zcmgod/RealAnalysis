@@ -278,7 +278,7 @@ $\forall x \in D$，都有数列$\left\{f_n(x)\right\}$ 的一个极限值与之
 对于任意$x_0 \in I$，存在$x_0$的一个邻域$\displaystyle U(x_0)$，使得
 $\displaystyle \left\{f_n(x)\right\}$在$\displaystyle U(x_0) \cap I$上一致收敛于$f$.
 
-\section{一致收敛函数列于函数项级数的性质}
+\section{一致收敛函数列与函数项级数的性质}
 \begin{theorem}
     设函数列$\displaystyle f_n$在$(a,x_0) \cup (x_0, b)$上一致收敛于$f(x)$，且
     对每一个$ \displaystyle n, \lim_{x \to x_0}f_n(x) = a_n$，
@@ -352,6 +352,96 @@ $\displaystyle \left\{f_n(x)\right\}$在$\displaystyle U(x_0) \cap I$上一致�
     \]
     的一致收敛及其极限函数的可积性。
 \end{example}
+
+\begin{theorem}{\rm(可微性)}
+    设$\displaystyle \left\{f_n\right\}$定义在$[a,b]$上的函数列，若$x_0 \in [a,b]$
+    为$\displaystyle \left\{f_n\right\}$ 的收敛点，$\displaystyle \left\{f_n\right\}$
+    的每一项在$[a,b]$上有连续的导数，且$\displaystyle \left\{f'_n\right\}$
+    在$[a,b]$上一致收敛，则：
+    \begin{equation}
+        \frac{d}{dx}\left(\lim_{n \to \infty}f_n(x)\right) = 
+        \lim_{n \to \infty}\frac{d}{dx}f_n(x)
+        \label{eq:eq11}
+    \end{equation}
+\end{theorem}
+    \begin{proof}
+        对于$x \in [a,b]$,总有：
+        \[
+            f_n(x) = f_n(x_0) + \int_{x_0}^xf'_n(t)\,{\rm d}t.
+            \]
+        \[
+            f(x) = \lim_{n \to \infty}f_n(x) = f(x_0) + \int_{x_0}^xg(t)\,{\rm d}t.
+            \]
+    \end{proof}
+\begin{corollary}
+        设函数列$\displaystyle \left\{f_n\right\}$定义在区间$I$上，若$x_0 \in I$ 为$\displaystyle \left\{f_n\right\}$
+        的收敛点，且$\displaystyle \left\{f'_n(x)\right\}$在$I$上内闭一致收敛，则$f$在$I$上可导，且有：
+        \[
+            f'(x) = \lim_{n \to \infty}f'_n(x)
+            \]
+\end{corollary}
+
+\begin{example}
+    讨论函数列
+    \[
+        f_n(x) = \frac{1}{2n}\ln \left(1+n^2x^2\right), n = 1,2,\cdots
+        \]
+    与
+    \[
+        f'_n(x) = \frac{nx}{1+n^2x^2}, n = 1,2,\cdots
+        \]
+    导函数列$\displaystyle \left\{f'_n(x)\right\}$在$[0,1]$上不一致收敛，但是交换极限与导数
+    法则成立。说明：一致收敛是极限运算与求导运算交换的充分条件，
+    不是必要条件。
+\end{example}
+
+现在来讨论定义在区间$[a,b]$上的函数项级数
+\begin{equation}
+    u_1(x) + u_2(x) + \cdots + u_n(x) + \cdots
+    \label{eq:eq12}
+\end{equation}
+的连续性、逐项积分与求导的性质。
+
+\begin{theorem}{\rm (连续性)}
+    若函数项级数$\displaystyle \sum u_n(x)$ 在区间$[a,b]$ 上一致收敛，且
+    每一项都连续，则和函数在$[a,b]$上也连续。
+\end{theorem}
+这个定理指出：在一致收敛条件下，求和运算与极限运算可以交换顺序：
+\begin{equation}
+    \sum \left(\lim_{x \to x_0}u_n(x)\right) = \lim_{x \to x_0}\left(\sum u_n(x)\right)
+    \label{eq:eq13}
+\end{equation}
+
+\begin{theorem}{\rm (逐项求积)}
+    若函数项级数$\displaystyle \sum u_n(x)$ 在区间$[a,b]$ 上一致收敛，且
+    每一项都连续，则
+    \[
+        \sum \int_a^bu_n(x)\, {\rm{d}} x = \int_a^b\sum u_n(x) \, \mathrm{d}x.
+        \]
+\end{theorem}
+\begin{theorem}{\rm (逐项求积)}
+    若函数项级数$\displaystyle \sum u_n(x)$ 在区间$[a,b]$ 上每一项都有连续
+    导数$x_0 \in [a,b]$为$\displaystyle \sum u_n(x)$的收敛点，且
+    $\displaystyle \sum u'_n(x)$在$[a,b]$上一致收敛，则：
+    \[
+        \sum u'_n(x) = \left(\sum u_n(x)\right)'
+        \]
+\end{theorem}
+\begin{example}
+    设
+    \[
+        u_n(x) = \frac{1}{n^3} \ln \left(1+n^2x^2\right), n = 1,2,\cdots,
+        \]
+    证明函数项级数$\displaystyle \sum u_n(x)$在$[0,1]$上一致收敛，
+    并讨论其和函数在 $[0,1]$上的连续性、可积性和可畏性。
+\end{example}
+
+\begin{example}
+    证明：函数$\displaystyle \zeta(x) = \sum_{n=1}^{\infty} \frac{1}{n^x}$
+    在$(1, +\infty)$上有连续的各阶导函数。
+\end{example}
+
+
 
 \end{CJK}
 \end{document}

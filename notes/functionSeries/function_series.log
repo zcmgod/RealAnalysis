@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  16 SEP 2018 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  17 SEP 2018 00:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -611,18 +611,18 @@ x/n/12/ff ^^L \C70/gbsn/bx/n/12/4e ^^T \C70/gbsn/bx/n/12/5b ù \C70/gbsn/m/it/12
 L/cmm/m/it/12 x\OT1/cmr/m/n/12 ) =
  []
 
-[5] [6] (./function_series.aux)
+[5] [6] [7] [8] (./function_series.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4106 strings out of 493090
- 50266 string characters out of 6134868
- 116933 words of memory out of 5000000
- 7456 multiletter control sequences out of 15000+600000
- 35215 words of font info for 129 fonts, out of 8000000 for 9000
+ 4170 strings out of 493090
+ 51222 string characters out of 6134868
+ 117960 words of memory out of 5000000
+ 7518 multiletter control sequences out of 15000+600000
+ 35797 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,43p,227b,1002s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on function_series.dvi (6 pages, 23368 bytes).
+Output written on function_series.dvi (8 pages, 28612 bytes).
