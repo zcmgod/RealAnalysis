@@ -1,0 +1,183 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\addtolength{\parskip}{3pt}
+\linespread{1.3} %一倍半行距
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定義}
+\newtheorem{example}{例子}
+\newtheorem{corollary}{推論}
+\newtheorem{remark}{注}
+\let\oldref\ref
+\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{冪級數}
+\author{武國寧}
+\date{}
+\maketitle
+\section{冪級數}
+    \indent 本章將討論由冪函數序列$\left\{a_n(x - x_0)^n\right\}$所產生的函數級數：
+    \begin{equation}
+        \sum_{n=0}^{\infty}a_n(x - x_0)^n
+        \label{eq:eq1}
+    \end{equation}
+它稱為冪級數，是一種最簡單的函數項級數。它可以看成是多項式的延伸。
+
+    \indent 下面討論$x_0 = 0$，則\ref{eq:eq1}為：
+    \begin{equation}
+        \sum_{n=0}^{\infty}a_n x^n
+        \label{eq:eq2}
+    \end{equation}
+\subsection{冪級數的收斂區間}
+    \indent 首先討論冪級數\ref{eq:eq2}的收斂問題。
+    \begin{theorem}{\rm(Abel 定理)}
+        若冪級數\ref{eq:eq2}在$x = \bar{x} \ne 0$處收斂，則對於滿足
+        不等式：$\vert x \vert < \vert \bar{x} \vert$的任何$x$，
+        冪級數\ref{eq:eq2}收斂且絕對收斂；若冪級數\ref{eq:eq2}
+        在$x = \bar{x} \ne 0$處發散，則對於滿足
+        不等式：$\vert x \vert > \vert \bar{x} \vert$的任何$x$，
+        冪級數\ref{eq:eq2}發散。
+    \end{theorem}
+\begin{remark}
+    \indent 冪級數\ref{eq:eq2}的收斂域是以原點為中心的區間。若以$2R$表示
+    區間的長度，則$R$為冪級數的收斂半徑。實際上，冪級數的收斂半徑
+    為收斂點的絕對值的上確界。
+
+    \indent 稱$(-R, R)$為冪級數\ref{eq:eq2}的收斂區間。
+
+\end{remark}
+
+\begin{theorem}
+    對於冪級數\ref{eq:eq2}，若
+    \begin{equation}
+        \lim_{n \to \infty}\sqrt[n]{\vert a_n \vert} = \rho,
+        \label{eq:eq3}
+    \end{equation}
+    則當
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $\displaystyle 0 < \rho < +\infty$，冪級數\ref{eq:eq2}的收斂
+            半徑為$\displaystyle R = \frac{1}{\rho}$;
+        \item $\displaystyle \rho = 0$，冪級數\ref{eq:eq2}的收斂
+            半徑為$\displaystyle R = +\infty$;
+        \item $\displaystyle \rho = +\infty$，冪級數\ref{eq:eq2}的收斂
+            半徑為$\displaystyle R = 0$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{example}
+    討論級數$\displaystyle \sum \frac{x^n}{n^2}$的收斂域。
+\end{example}
+
+\begin{example}
+    討論級數$\displaystyle \sum \frac{x^n}{n}$的收斂域。
+\end{example}
+
+\begin{example}
+    討論級數$\displaystyle \sum \frac{x^n}{n!}, \sum n! x^n$的收斂域。
+\end{example}
+
+\begin{theorem}{\rm(柯西-阿達馬定理)}
+    對於冪級數\ref{eq:eq2}，設
+    \[
+        \rho = \overline{\lim_{n \to \infty}}\sqrt[n]{\vert a_n \vert}
+        \]
+    則當：
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $\displaystyle 0 < \rho < +\infty$，冪級數\ref{eq:eq2}的收斂
+            半徑為$\displaystyle R = \frac{1}{\rho}$;
+        \item $\displaystyle \rho = 0$，冪級數\ref{eq:eq2}的收斂
+            半徑為$\displaystyle R = +\infty$;
+        \item $\displaystyle \rho = +\infty$，冪級數\ref{eq:eq2}的收斂
+            半徑為$\displaystyle R = 0$.
+    \end{enumerate}
+\end{theorem}
+\begin{example}
+    討論級數
+    \[
+        1 + \frac{x}{3} + \frac{x^2}{2^2} + \frac{x^3}{3^2} + 
+        \cdots + \frac{x^{2n-1}}{3^{2n-1}} + \frac{x^{2n}}{2^{2n}} + \cdots
+        \]
+    的收斂域。
+\end{example}
+
+\begin{example}
+    討論級數
+    \[
+        \sum_{n=1}^{\infty} \frac{x^{2n}}{n-3^{2n}}
+        \]
+    的收斂域。
+\end{example}
+
+\begin{theorem}
+    若冪級數\ref{eq:eq2}的收斂半徑為$\displaystyle R(R>0)$，則冪級數\ref{eq:eq2}在
+    它的收斂區間$(-R, R)$內的任一閉區間$[a,b]$上都一致收斂。
+\end{theorem}
+
+\begin{theorem}
+    若冪級數\ref{eq:eq2}的收斂半徑為$\displaystyle R(R>0)$，且在$x = R $或$x = -R$ 
+    時收斂，則冪級數\ref{eq:eq2}在$[0, R]$或$[-R, 0]$上一致收斂。
+\end{theorem}
+
+\begin{example}
+    討論級數$\displaystyle \sum \frac{(x-1)^n}{2^nn}$的收斂域。
+\end{example}
+
+\subsection{冪級數的性質}
+\begin{theorem}
+    \begin{enumerate}[label = {\rm (\roman*)}]
+        \item 冪級數\ref{eq:eq2}的和函數為$(-R, R)$上的連續函數；
+        \item 若冪級數\ref{eq:eq2}在左（右)端點上收斂，則其和函數
+            在這一端點上右(左)連續。
+    \end{enumerate}
+\end{theorem}
+
+\ref{eq:eq2}逐項求導，積分為：
+\begin{equation}
+    a_1 + 2a_2x + 3a_3x^2 + \cdots + n a_n x^{n-1} \cdots + \cdots
+    \label{eq:eq4}
+\end{equation}
+\begin{equation}
+    a_0 + 2a_2x + \frac{a_1}{2}x^2 + \cdots +  \frac{a_n}{n+1} x^{n+1} + \cdots
+    \label{eq:eq5}
+\end{equation}
+
+\begin{theorem}
+    冪級數 \ref{eq:eq2}與冪級數\ref{eq:eq4},\ref{eq:eq5}具有相同的
+    收斂區間。
+\end{theorem}
+\begin{theorem}
+    設冪級數\ref{eq:eq2}在收斂區間$(-R, R)$上的和函數為$f$，若$x \in (-R, R)$
+    則有：
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $f$在點$x$可導，且
+            \[
+                f'(x) = \sum_{n=1}^{\infty} n a_n x^{n-1}
+                \]
+        \item $f$在$0$與$x$之間的區間上可積，且
+            \[
+                \int_0^xf(t)\,\mathrm{d}t = \sum_{n=0}^{\infty}\frac{a_n}{n+1}x^{n+1}
+                \]
+    \end{enumerate}
+\end{theorem}
+
+\end{CJK*}
+\end{document}
+
+
+\end{CJK*}
+\end{document}
