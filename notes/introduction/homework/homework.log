@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  20 SEP 2018 22:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  20 SEP 2018 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,19 +575,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Missing character: There is no ¾ in font bsmiu8b!
 Missing character: There is no p in font bsmiu65!
-Missing character: There is no º in font cmr12!
-Missing character: There is no „ in font cmr12!
  [1
 
 ]
 (./homework.aux) ) 
 Here is how much of TeX's memory you used:
- 3822 strings out of 493090
- 46508 string characters out of 6134868
+ 3805 strings out of 493090
+ 46257 string characters out of 6134868
  115899 words of memory out of 5000000
- 7191 multiletter control sequences out of 15000+600000
- 23478 words of font info for 87 fonts, out of 8000000 for 9000
+ 7177 multiletter control sequences out of 15000+600000
+ 21989 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,43p,6714b,1039s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework.dvi (1 page, 4168 bytes).
+Output written on homework.dvi (1 page, 4176 bytes).
