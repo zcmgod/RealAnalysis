@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\newtheorem{example}{例子}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注}
+\let\oldref\ref
+\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{CJK}{UTF8}{gbsn}
+\begin{document}
+\title{作业}
+\author{武国宁}
+\date{}
+\maketitle
+
+\section{证明下列级数收敛，并求其和}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \left(\frac{1}{2} + \frac{1}{3}\right) + 
+        \left(\frac{1}{2^2} + \frac{1}{3^2}\right) + \cdots + 
+        \left(\frac{1}{2^n} + \frac{1}{3^n}\right)$
+    \item$ \displaystyle \sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}$ 
+    \item$ \displaystyle \sum_{n=1}^{\infty} \left(\sqrt{n+2} - 2\sqrt{n+1}
+        + \sqrt{n} \right)$ 
+\end{enumerate}
+
+\section{证明题}
+证明：若数列$\left\{a_n\right\}$收敛于$a$，则级数$\displaystyle \sum_{n=1}^{\infty} \left( a_n - 
+a_{n+1}\right) = a_1 - a$.  
+\section{证明题}
+证明：若数列$\left\{b_n\right\}$ 有$ \displaystyle \lim_{n \to \infty} b_n = \infty$, 则：
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item 级数$\displaystyle \sum_{n=1}^{\infty} \left(b_{n+1} - b_n\right)$发散；
+    \item 当$\displaystyle b_n \ne 0$时，级数$\displaystyle \sum_{n = 1} ^{\infty} 
+        \left( \frac{1}{b_n} - \frac{1}{b_{n+1}}\right) = \frac{1}{b_1}$.
+\end{enumerate}
+\section{利用上述结果求下列级数的和}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum_{n=1}^{\infty} \frac{1}{(a+n-1)(a+n)}$
+    \item $\displaystyle \sum_{n=1}^{\infty} (-1)^{n+1} \frac{2n+1}{n(n+1)}$
+\end{enumerate}
+
+\section{应用柯西收敛原理证明下列级数的敛散性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum_{n=1}^{\infty} \frac{\sin 2^n}{2^n}$
+    \item $\displaystyle \sum_{n=1}^{\infty} \frac{1}{\sqrt{n+n^2}}$
+\end{enumerate}
+ 
+\section{判别下列级数的敛散性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{1}{n^2 + a^2}$
+    \item $\displaystyle \sum 2^n\frac{\pi}{3^n}$
+    \item $\displaystyle \sum \frac{\pi}{n\sqrt[n]n}$
+    \item $\displaystyle \sum \frac{(n+1)!}{10^n}$
+    \item $\displaystyle \sum \frac{n^2}{2^n}$
+\end{enumerate}
+
+\section{采用积分判别法判别下列级数的敛散性}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{1}{n^2 + 1}$
+    \item $\displaystyle \sum \frac{n}{n^2 + 1}$
+\end{enumerate}
+
+\section{证明题}
+设$\displaystyle a_n \ge 0, n = 1,2, \cdots$ 且$\displaystyle \left\{na_n\right\}$
+有界，证明$\displaystyle a_n^2$收敛。 
+
+\section{下列级数那些条件收敛，那些绝对收敛，那些发散}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{\sin nx}{n!}$
+    \item $\displaystyle \sum (-1)^n\frac{n}{n+1}$
+    \item $\displaystyle \sum (-1)^n\frac{\ln (n+1)}{n+1}$
+    \item $\displaystyle \sum n! \left(\frac{x}{n}\right)^n$
+\end{enumerate}
+\section{应用阿贝尔和狄利克雷方法，判断下列级数的敛散}
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \sum \frac{(-1)^n}{n}\frac{x^n}{x^n+1}, (x > 0)$
+    \item $\displaystyle \sum \frac{\sin nx}{n^{\alpha}}, x\in(0,2\pi), 
+        \alpha > 0$
+    \item $\displaystyle \sum (-1)^n\frac{\cos^2n}{n}$
+\end{enumerate}
+
+\end{CJK}
+\end{document}
+
+\end{CJK}
+\end{document}
