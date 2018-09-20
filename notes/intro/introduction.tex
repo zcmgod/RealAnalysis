@@ -9,6 +9,7 @@
 \usepackage{fancyhdr}
 \usepackage{color}
 \usepackage{amsthm}
+\usepackage{CJKutf8}
 
 %\def\pgfsysdriver{pgfsys-dvipdfmx.def}
 \usepackage{tikz}
@@ -386,8 +387,35 @@ A mapping $f: X \to Y$ is said to be
 
 
 \section{The Real Numbers}
-Numbers in mathematics are like time in physics: everyone knows what 
-they are, and only experts find them hard to understand.
+In mathematics, a real number is a value of a continuous quantity 
+that can represent a distance along a line. The adjective \textbf{real}
+in this context was introduced in the 17th century by Rene Descartes,
+who distinguished between real and imaginary roots of polynomials.
+
+The discovery of a suitable rigorous definition of the real numbers,
+indeed, was one of the most important developments of 19th-century 
+mathematics. The current standard axiomatic definition is that 
+real numbers forms the unique Dedkind-complete ordered field, up to 
+an isomorphism, whereas popular constructive definitions of 
+real numbers include declaring them as equivalence classes of 
+Cauchy sequences of rational numbers, Dedekind cuts, 
+or infinite decimal representations, together with precise 
+interpretations for the arithmetic operations and the order 
+relation. All these definitions satisfy the axiomatic 
+definition and thus equivalent.
+
+\subsection{The Definition of Real Numbers}
+The real number system $\mathbb{R}$, can be defined axiomatically 
+up to isomorphism, which is described hereafter. There are also 
+many ways to construct the real number system, for example, starting
+from natural numbers, then defining rational numbers algebraically,
+and finally defining real numbers as equivalence classes of their 
+Cauchy sequences or as Dedekind cuts, which are certain subsets 
+of rational numbers. Another possibility is to start from some 
+rigorous axiomatization of Euclidean geometry and then define 
+the real number system geometrically. All these constructions 
+are on equal footing.
+
 \subsection{The Axiom System and some General Properties of the 
 Set of Real Numbers}
 \begin{definition} {A set $\mathbb{R}$ is called the set of \textit{real numbers}
@@ -497,6 +525,41 @@ all $x\in X$ and $y\in Y$.
 We now have a complete list of axioms such that any set on 
 which those axioms hold can be considered a concrete 
 realization or model of the real numbers.
+
+In relation to any abstract system of axioms, at least two questions
+arise immediately.
+Fist, are these axioms consistent? That is, does there exists a set 
+satisfying all the conditions just listed? This is the problem of 
+consistency of the axioms.
+Second, does the given system of axiom determine the mathematical 
+object uniquely?  Here the uniqueness must be understood as follows.
+If two people A and B construct models independently, say of number 
+systems $\mathbb{R}_A$ and $\mathbb{R}_B$, satisfying the axioms, then a 
+bijective correspondence can be established between the system 
+$\mathbb{R}_A$ and $\mathbb{R}_B$, say $\displaystyle f: \mathbb{R}_A \to 
+\mathbb{R}_B$, preserving the arithmetic operations and the order, that 
+is 
+\begin{enumerate}
+    \item $\displaystyle f(x+y) = f(x) + f(y)$
+    \item $\displaystyle f(x \cdot y) = f(x)\cdot f(y)$ 
+    \item $\displaystyle x \le y \iff f(x) \le f(y)$ 
+\end{enumerate}
+
+\subsection{Dedekind Cut}
+A Dedekind cut is a pair $\displaystyle (A, B)$, where $A$
+and $B$ are both subsets of rationals. This pair has to satisfy 
+the following properties:
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $A$ is nonempty.
+    \item $B$ is nonempty.
+    \item If $a \in A$ and $c < a$ then $c \in A$.
+    \item If $b \in B$ and $c > b$ then $c \in B$.
+    \item If $b \notin B$ and $a < b$ then $a \in A$.
+    \item If $a \notin A$ and $b > a$ then $b \in B$.
+    \item For each $a \in A$ there is some $b > a$ so that $b \in A$.
+    \item For each $b \in B$ there is some $a < b$ so that $a \in B$.
+\end{enumerate}
+That's the definition. A real number is defined to be a Dedekind cut.
 
 \subsection{The Most Important Classes of Real Numbers}
 \subsubsection{The Natural Numbers and the Principle of Mathematical 
@@ -713,5 +776,17 @@ and if $A$ is not bounded from below, we write $\inf A = -\infty$.
     \footnote{From the Latin continuum, meaning continuous, or solid.}
     and its cardinality the cardinality of the continuum.
 \end{definition}
+
+\begin{CJK*}{UTF8}{bsmi}
+    實數連續性：確界存在原理
+
+    實數完備性：柯西收斂原理。
+
+    確界收斂原理$\Rightarrow $ 單調有界原理 $\Rightarrow$
+    閉區間套定理 $\Rightarrow$ Bolzano-Weierstrass定理 $\Rightarrow $Cauchy收斂原理
+    $\Rightarrow$ 閉區間套定理 $\Rightarrow$ 確界原理。
+    
+    連續性 $\iff$ 完備性。
+\end{CJK*}
 \end{document}
 

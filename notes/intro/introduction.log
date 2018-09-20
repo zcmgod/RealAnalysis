@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 SEP 2018 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 SEP 2018 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,6 +380,92 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip58
 \dth@everypar=\toks29
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+Package: CJKutf8 2015/04/18 4.8.4
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/CJK.sty
+Package: CJK 2015/04/18 4.8.4
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty
+Package: MULEenc 2015/04/18 4.8.4
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/CJK.enc
+File: CJK.enc 2015/04/18 4.8.4
+Now handling font encoding C00 ...
+... no UTF-8 mapping file for font encoding C00
+Now handling font encoding C05 ...
+... no UTF-8 mapping file for font encoding C05
+Now handling font encoding C09 ...
+... no UTF-8 mapping file for font encoding C09
+Now handling font encoding C10 ...
+... no UTF-8 mapping file for font encoding C10
+Now handling font encoding C20 ...
+... no UTF-8 mapping file for font encoding C20
+Now handling font encoding C19 ...
+... no UTF-8 mapping file for font encoding C19
+Now handling font encoding C40 ...
+... no UTF-8 mapping file for font encoding C40
+Now handling font encoding C42 ...
+... no UTF-8 mapping file for font encoding C42
+Now handling font encoding C43 ...
+... no UTF-8 mapping file for font encoding C43
+Now handling font encoding C50 ...
+... no UTF-8 mapping file for font encoding C50
+Now handling font encoding C52 ...
+... no UTF-8 mapping file for font encoding C52
+Now handling font encoding C49 ...
+... no UTF-8 mapping file for font encoding C49
+Now handling font encoding C60 ...
+... no UTF-8 mapping file for font encoding C60
+Now handling font encoding C61 ...
+... no UTF-8 mapping file for font encoding C61
+Now handling font encoding C63 ...
+... no UTF-8 mapping file for font encoding C63
+Now handling font encoding C64 ...
+... no UTF-8 mapping file for font encoding C64
+Now handling font encoding C65 ...
+... no UTF-8 mapping file for font encoding C65
+Now handling font encoding C70 ...
+... no UTF-8 mapping file for font encoding C70
+Now handling font encoding C31 ...
+... no UTF-8 mapping file for font encoding C31
+Now handling font encoding C32 ...
+... no UTF-8 mapping file for font encoding C32
+Now handling font encoding C33 ...
+... no UTF-8 mapping file for font encoding C33
+Now handling font encoding C34 ...
+... no UTF-8 mapping file for font encoding C34
+Now handling font encoding C35 ...
+... no UTF-8 mapping file for font encoding C35
+Now handling font encoding C36 ...
+... no UTF-8 mapping file for font encoding C36
+Now handling font encoding C37 ...
+... no UTF-8 mapping file for font encoding C37
+Now handling font encoding C80 ...
+... no UTF-8 mapping file for font encoding C80
+Now handling font encoding C81 ...
+... no UTF-8 mapping file for font encoding C81
+Now handling font encoding C01 ...
+... no UTF-8 mapping file for font encoding C01
+Now handling font encoding C11 ...
+... no UTF-8 mapping file for font encoding C11
+Now handling font encoding C21 ...
+... no UTF-8 mapping file for font encoding C21
+Now handling font encoding C41 ...
+... no UTF-8 mapping file for font encoding C41
+Now handling font encoding C62 ...
+... no UTF-8 mapping file for font encoding C62
+)
+LaTeX Info: Redefining \selectfont on input line 755.
+\CJK@indent=\box29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -392,7 +478,7 @@ x
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box29
+\pgfutil@abb=\box30
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -478,7 +564,7 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen125
 \pgfmath@count=\count107
-\pgfmath@box=\box30
+\pgfmath@box=\box31
 \pgfmath@toks=\toks37
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
@@ -537,9 +623,9 @@ File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
 File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
-\pgfpic=\box31
-\pgf@hbox=\box32
-\pgf@layerbox@main=\box33
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
 \pgf@picture@serial@count=\count109
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
@@ -584,7 +670,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
 File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
-\pgfexternal@startupbox=\box34
+\pgfexternal@startupbox=\box35
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
@@ -601,7 +687,7 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
-\pgfnodeparttextbox=\box35
+\pgfnodeparttextbox=\box36
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -647,10 +733,10 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikz@lastysaved=\dimen158
 \tikzleveldistance=\dimen159
 \tikzsiblingdistance=\dimen160
-\tikz@figbox=\box36
-\tikz@figbox@bg=\box37
-\tikz@tempbox=\box38
-\tikz@tempbox@bg=\box39
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
 \tikztreelevel=\count112
 \tikznumberofchildren=\count113
 \tikznumberofcurrentchild=\count114
@@ -673,27 +759,91 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 \c@example=\count121
 \c@theorem=\count122
 \c@proposition=\count123
-
-No file introduction.aux.
+ (./introduction.aux)
 \openout1 = `introduction.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count124
 \scratchdimen=\dimen161
-\scratchbox=\box40
+\scratchbox=\box41
 \nofMPsegments=\count125
 \nofMParguments=\count126
 \everyMPshowfont=\toks42
@@ -709,10 +859,6 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -751,27 +897,27 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
  [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (13.02168pt too wide) in paragraph at lines 176--178
+Overfull \hbox (13.02168pt too wide) in paragraph at lines 177--179
 []\OT1/cmr/m/n/12 The []\OT1/cmr/bx/n/12 in-ter-sec-tion[] \OT1/cmr/m/n/12 of $
 \OML/cmm/m/it/12 A$ \OT1/cmr/m/n/12 and $\OML/cmm/m/it/12 B$ \OT1/cmr/m/n/12 is
  the set $\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 B \U/msa/m/n/1
@@ -782,73 +928,116 @@ Overfull \hbox (13.02168pt too wide) in paragraph at lines 176--178
 File: ../Figs/absolutefun.png Graphic file (type png)
 
 <use ../Figs/absolutefun.png>
-Package pdftex.def Info: ../Figs/absolutefun.png used on input line 311.
+Package pdftex.def Info: ../Figs/absolutefun.png used on input line 312.
 (pdftex.def)             Requested size: 195.0pt x 137.39381pt.
  [5 <../Figs/absolutefun.png>]
 <../Figs/gintfun.png, id=41, 551.05875pt x 461.725pt>
 File: ../Figs/gintfun.png Graphic file (type png)
 
 <use ../Figs/gintfun.png>
-Package pdftex.def Info: ../Figs/gintfun.png used on input line 324.
+Package pdftex.def Info: ../Figs/gintfun.png used on input line 325.
 (pdftex.def)             Requested size: 195.0pt x 163.38864pt.
 
 <../Figs/lintfun.png, id=42, 432.61626pt x 357.335pt>
 File: ../Figs/lintfun.png Graphic file (type png)
 
 <use ../Figs/lintfun.png>
-Package pdftex.def Info: ../Figs/lintfun.png used on input line 337.
+Package pdftex.def Info: ../Figs/lintfun.png used on input line 338.
 (pdftex.def)             Requested size: 195.0pt x 161.06642pt.
  [6 <../Figs/gintfun.png> <../Figs/lintfun.png>]
 <../Figs/signumfun.png, id=48, 400.49625pt x 309.155pt>
 File: ../Figs/signumfun.png Graphic file (type png)
 
 <use ../Figs/signumfun.png>
-Package pdftex.def Info: ../Figs/signumfun.png used on input line 356.
+Package pdftex.def Info: ../Figs/signumfun.png used on input line 357.
 (pdftex.def)             Requested size: 195.0pt x 150.52965pt.
 
 <../Figs/rimannfun.pdf, id=49, 716.6775pt x 339.2675pt>
 File: ../Figs/rimannfun.pdf Graphic file (type pdf)
 
 <use ../Figs/rimannfun.pdf>
-Package pdftex.def Info: ../Figs/rimannfun.pdf used on input line 380.
+Package pdftex.def Info: ../Figs/rimannfun.pdf used on input line 381.
 (pdftex.def)             Requested size: 195.0pt x 92.30748pt.
  [7 <../Figs/signumfun.png> <../Figs/rimannfun.pdf>] [8] [9] [10] [11] [12] [13
-] [14] [15] (./introduction.aux)
+] [14] [15]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
+File: UTF8.bdg 2015/04/18 4.8.4
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2015/04/18 4.8.4
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2015/04/18 4.8.4
+)
+LaTeX Font Info:    Try loading font information for C70+bsmi on input line 781
+.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/c70bsmi.fd
+File: c70bsmi.fd 2015/04/18 4.8.4
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/c70bsmi.fdx
+File: c70bsmi.fdx 2015/04/18 4.8.4
+)
+Overfull \hbox (2.62236pt too wide) in paragraph at lines 785--788
+[]\C70/bsmi/m/n/12/78 º \C70/bsmi/m/n/12/75 L \C70/bsmi/m/n/12/65 6 ‚ \C70/bsmi
+/m/n/12/53 Ÿ \C70/bsmi/m/n/12/74 ^^F$\OMS/cmsy/m/n/12 )$ \C70/bsmi/m/n/12/55 ® 
+\C70/bsmi/m/n/12/8a ¿ \C70/bsmi/m/n/12/67 	 \C70/bsmi/m/n/12/75 L \C70/bsmi/m/n
+/12/53 Ÿ \C70/bsmi/m/n/12/74 ^^F$\OMS/cmsy/m/n/12 )$ \C70/bsmi/m/n/12/95 ‰ \C70
+/bsmi/m/n/12/53 @ \C70/bsmi/m/n/12/95 “ \C70/bsmi/m/n/12/59 W \C70/bsmi/m/n/12/
+5b š \C70/bsmi/m/n/12/74 ^^F$\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 Bolzano-Weiers
+trass\C70/bsmi/m/n/12/5b š
+ []
 
- ) 
+[16] (./introduction.aux) ) 
 Here is how much of TeX's memory you used:
- 12959 strings out of 493089
- 251834 string characters out of 6134842
- 293769 words of memory out of 5000000
- 16169 multiletter control sequences out of 15000+600000
- 13741 words of font info for 53 fonts, out of 8000000 for 9000
+ 14510 strings out of 493089
+ 270150 string characters out of 6134842
+ 312707 words of memory out of 5000000
+ 17616 multiletter control sequences out of 15000+600000
+ 18874 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,54p,389b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on introduction.pdf (15 pages, 385923 bytes).
+ 55i,11n,54p,389b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/arph
+ic/bsmiu/bsmiu30.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsm
+iu/bsmiu50.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsm
+iu53.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu55.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu57.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu59.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu5b.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu60.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu65.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/arphic/bsmiu/bsmiu67.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/arphic/bsmiu/bsmiu74.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/arphic/bsmiu/bsmiu75.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/arphic/bsmiu/bsmiu78.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arp
+hic/bsmiu/bsmiu7e.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bs
+miu/bsmiu89.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bs
+miu8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu90.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu95.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/arphic/bsmiu/bsmiuff.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on introduction.pdf (16 pages, 449097 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 243 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
