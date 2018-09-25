@@ -1,0 +1,69 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\newtheorem{example}{例子}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注}
+\let\oldref\ref
+\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{CJK*}{UTF8}{bsmi}
+\begin{document}
+\title{作業}
+\author{武國寧}
+\date{}
+\maketitle
+ 
+\section{解答題}
+設$\displaystyle a_n = \frac{1+(-1)^n}{n}, n = 1, 2, \cdots, a = 0.$
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item 對下列 $\epsilon $分別求出極限定義中的$N:$
+        \[
+            \epsilon_1 = 0.1, \epsilon_2 = 0.01, \epsilon_3 = 0.001
+        \]
+    \item 對$\epsilon_1, \epsilon_2, \epsilon_3$，可找到響應的$N$，這是否說明$a_n$趨於0？應該怎樣做才對？
+    \item 對於任意給定的$\epsilon$是否可以找到一個$N$?
+\end{enumerate}
+
+\section{證明題}
+按$\epsilon-N$定義證明：
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \lim_{n \to \infty} \frac{n}{n+1} = 1$
+    \item $\displaystyle \lim_{n \to \infty} \frac{3n^2+n}{2n^2-1} = \frac{3}{2}$
+    \item $\displaystyle \lim_{n \to \infty} \frac{n!}{n^n} = 0$
+    \item $\displaystyle \lim_{n \to \infty} \frac{n}{a^n} = 0 (a>1)$
+    \item $\displaystyle \lim_{n \to \infty} \sqrt[n]{10} = 1$
+\end{enumerate}
+
+\section{證明題}
+證明：若$\displaystyle \lim_{n \to \infty} a_n = a$，則對於任意的$k$，
+有$\displaystyle \lim_{n \to \infty} a_{n+k} = a$
+
+\section{解答題}
+下面那些數列是有界數列、無界數列以及無窮大量：
+\begin{enumerate}[label={\rm(\arabic*)}]
+    \item $\displaystyle \left\{\left[1+(-1)^n\right]\sqrt{n}\right\}$
+    \item $\displaystyle \left\{\sin n\right\}$
+    \item $\displaystyle \left\{\frac{n^2}{n-\sqrt{5}}\right\}$
+    \item $\displaystyle \left\{2^{(-1)^{n}n}\right\}$
+\end{enumerate}
+
+
+
+\end{CJK*}
+\end{document}
+
