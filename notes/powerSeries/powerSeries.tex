@@ -175,9 +175,75 @@
     \end{enumerate}
 \end{theorem}
 
-\end{CJK*}
-\end{document}
+\begin{corollary}
+    記$f$ 為冪級數\ref{eq:eq2}在收斂區間$(-R, R)$上的和函數，則在$(-R, R)$
+    上$f$具有任意階導數，且可以逐項求導數任意次：
+    \[
+        f'(x) = a_1 + 2a_2x + 3a_3x^2 + \cdots + na_nx^{n-1} + \cdots
+    \]
+    \[
+        f''(x) = 2a_2 + 6a_3x + \cdots + n(n-1)a_nx^{n-2} + \cdots
+    \]
+    \[
+        \cdots\cdots\cdots
+    \]
+    \[
+        f^{(n)}(x) = n!a_n + (n+1)n(n-1)\cdots 2 a_{n+1}x
+    \]
+\end{corollary}
+\begin{corollary}
+    記$f$ 為冪級數\ref{eq:eq2}在點$x = 0$ 某鄰域上的和函數，則冪級數
+    \ref{eq:eq2}的係屬與$f$在$x = 0$處的各階導數有如下關係：
+    \[
+        a_0 = f(0), \cdots a_n = \frac{f^{(n)}(0)}{n!}, n=1,2 \cdots
+    \]
+\end{corollary}
 
+\subsection{冪級數的運算}
+\begin{equation}
+    \sum_{n=1}^{\infty}a_nx^n
+    \label{eq:eq6}
+\end{equation}
+\begin{equation}
+    \sum_{n=1}^{\infty}b_nx^n
+    \label{eq:eq7}
+\end{equation}
 
+\begin{definition}
+    若冪級數\ref{eq:eq6}與冪級數\ref{eq:eq7}在$x=0$點的某鄰域內有相同的
+    和函數，則稱這兩個冪級數在該鄰域內相等。
+\end{definition}
+
+\begin{theorem}
+    若冪級數\ref{eq:eq6}與\ref{eq:eq7}在$x = 0$的某鄰域內相等，則它們同次
+    冪的係屬相等。
+\end{theorem}
+
+\begin{theorem}
+    若冪級數\ref{eq:eq6}與\ref{eq:eq7}的收斂半徑分別是$R_a, R_b$，則有
+    \[
+        \lambda\sum a_n x^n = \sum \lambda a_nx^n, \vert x \vert < R_a
+    \]
+    \[
+        \sum a_n x^n \pm \sum b_n x^n = \sum (a_n \pm b_n)x^n, \vert x \vert < R
+    \]
+    \[
+        \sum a_n x^n \cdot \sum b_n x^n = \sum c_n x^n, \vert x \vert < R
+    \]
+
+    這裡$\displaystyle R = \min\left\{R_a, R_b\right\}, c_n = \sum_{k=1}^{n}a_k b_{n-1}$
+
+\end{theorem}
+
+\begin{example}
+    討論幾何級數在收斂域(-1, 1)上的可導，可積分性質。
+    \[
+        f(x) = \frac{1}{1-x} = 1 + x + x^2 + \cdots + x^n + \cdots
+    \]
+\end{example}
+
+\begin{example}
+    求級數$\displaystyle \sum_{n=1}^{\infty} (-1)^{n-1}n^2x^n$的和函數。
+\end{example}
 \end{CJK*}
 \end{document}
