@@ -10,40 +10,45 @@
 \usepackage{fancyhdr}
 \usepackage{setspace}
 \usepackage{enumitem}
+\usepackage{lipsum}
 \usepackage{indentfirst}
+
+\theoremstyle{theorem}
+
 \addtolength{\parskip}{3pt}
 \linespread{1.3} %一倍半行距
 \begin{document}
 \begin{CJK*}{UTF8}{bsmi}
-\newtheorem{theorem}{定理}
-\newtheorem{lemma}{引理}
-\newtheorem{definition}{定義}
-\newtheorem{example}{例子}
-\newtheorem{corollary}{推論}
-\newtheorem{remark}{注}
-\let\oldref\ref
-\renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+    \newtheorem{theorem}{定理}[section]
+    \newtheorem{lemma}{引理}[section]
+    \newtheorem{definition}{定義}[section]
+    \newtheorem{example}{例子}[section]
+    \newtheorem{corollary}{推論}[section]
+    \newtheorem{remark}{注}[section]
+    \let\oldref\ref
+    \renewcommand{\ref}[1]{\rm{(\oldref{#1})}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
 
-\title{冪級數}
-\author{武國寧}
-\date{}
-\maketitle
-\section{冪級數}
+    \title{冪級數}
+    \author{武國寧}
+    \date{}
+    \maketitle
+
+    \section{冪級數}
     \indent 本章將討論由冪函數序列$\left\{a_n(x - x_0)^n\right\}$所產生的函數級數：
     \begin{equation}
         \sum_{n=0}^{\infty}a_n(x - x_0)^n
         \label{eq:eq1}
     \end{equation}
-它稱為冪級數，是一種最簡單的函數項級數。它可以看成是多項式的延伸。
+    它稱為冪級數，是一種最簡單的函數項級數。它可以看成是多項式的延伸。
 
     \indent 下面討論$x_0 = 0$，則\ref{eq:eq1}為：
     \begin{equation}
         \sum_{n=0}^{\infty}a_n x^n
         \label{eq:eq2}
     \end{equation}
-\subsection{冪級數的收斂區間}
+    \subsection{冪級數的收斂區間}
     \indent 首先討論冪級數\ref{eq:eq2}的收斂問題。
     \begin{theorem}{\rm(Abel 定理)}
         若冪級數\ref{eq:eq2}在$x = \bar{x} \ne 0$處收斂，則對於滿足
@@ -53,16 +58,16 @@
         不等式：$\vert x \vert > \vert \bar{x} \vert$的任何$x$，
         冪級數\ref{eq:eq2}發散。
     \end{theorem}
-\begin{remark}
+    \begin{remark}
     \indent 冪級數\ref{eq:eq2}的收斂域是以原點為中心的區間。若以$2R$表示
     區間的長度，則$R$為冪級數的收斂半徑。實際上，冪級數的收斂半徑
     為收斂點的絕對值的上確界。
 
     \indent 稱$(-R, R)$為冪級數\ref{eq:eq2}的收斂區間。
 
-\end{remark}
+    \end{remark}
 
-\begin{theorem}
+    \begin{theorem}
     對於冪級數\ref{eq:eq2}，若
     \begin{equation}
         \lim_{n \to \infty}\sqrt[n]{\vert a_n \vert} = \rho,
@@ -77,11 +82,11 @@
         \item $\displaystyle \rho = +\infty$，冪級數\ref{eq:eq2}的收斂
             半徑為$\displaystyle R = 0$.
     \end{enumerate}
-\end{theorem}
+    \end{theorem}
 
-\begin{example}
-    討論級數$\displaystyle \sum \frac{x^n}{n^2}$的收斂域。
-\end{example}
+    \begin{example}
+        討論級數$\displaystyle \sum \frac{x^n}{n^2}$的收斂域。
+    \end{example}
 
 \begin{example}
     討論級數$\displaystyle \sum \frac{x^n}{n}$的收斂域。
@@ -245,5 +250,198 @@
 \begin{example}
     求級數$\displaystyle \sum_{n=1}^{\infty} (-1)^{n-1}n^2x^n$的和函數。
 \end{example}
+
+
+    \section{函數的冪級數展開}
+    \subsection{泰勒級數}
+    若函數$f(x)$在$x_0$的某鄰域上存在直到$n+1$階的連續導數，則有：
+    \begin{equation}
+        f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 
+               + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)
+               \label{eq:eq8}
+    \end{equation}
+    這裡$R_n(x)$為拉格朗日型余項：
+    \begin{equation}
+        R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1}
+        \label{eq:eq9}
+    \end{equation}
+    如果函數在$x_0$處具有任意階導數，這時稱級數：
+    \begin{equation}
+         f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 
+                + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + \cdots
+        \label{eq:eq10}
+    \end{equation}
+    為函數在$x_0$處的\textbf{泰勒級數}。對於級數\ref{eq:eq10}在$x_0$點
+    的附近能否確切的表達$f$，是本節所要討論的問題。
+
+    \begin{example}
+        討論函數 
+        \[
+            f(x) = \left\{ \begin{array}{ll} 
+                e^{-\frac{1}{x^2}}, & x \ne 0 \\
+                0,                  & x = 0
+            \end{array} \right.
+        \]
+        在$x = 0$處的泰勒展開式。
+    \end{example}
+
+    \begin{theorem}
+        設$f(x)$在點$x_0$具有任意階導數，那麼$f(x)$在區間$(x_0-r, x_0+r)$
+        上等於它的泰勒級數的和函數的充分必要條件是：對於一切滿足不等式 
+        $\displaystyle \vert x - x_0 \vert < r$ 的$x$，有：
+        \[
+            \lim_{n \to \infty} R_n(x) = 0
+        \]
+        這裡$R_n(x)$是$f(x)$在$x_0$點的泰勒公式的余項。
+    \end{theorem}
+
+    如果$f$能在點$x_0$的某鄰域上等於其泰勒級數的和函數，則稱函數$f$
+    在點$x_0$的這一鄰域上可以展開成為泰勒級數，並稱等式
+    \begin{equation}
+        f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 
+               + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + \cdots
+               \label{eq:eq11}
+    \end{equation}
+    的右邊為$f$在$x_0$處的\textbf{泰勒級數展開式}，或稱為\textbf{冪級數展開式}。
+
+    \begin{remark}
+        函數的泰勒級數展開式是唯一的。
+    \end{remark}
+
+    在實際應用上，主要討論函數在$x_0 = 0$處的泰勒展開式，這時級數可以寫作：
+    \[
+        f(0) + \frac{f'(0)}{1!}x + \frac{f''(0)}{2!}x^2 + \cdots 
+             + \frac{f^{(n)}(0)}{n!}x^n + \cdots 
+    \]
+    稱為\textbf{麥克勞林級數}。
+
+    \begin{theorem}{\rm (Cauchy型余項)}
+        設$f(x)$在$(x_0-r, x_0+R)$上任意階可導，則有：
+        \[
+            f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k 
+                   + R_n(x), x \in (x_0-r, x_0+r)
+        \]
+        其中，
+        \begin{equation}
+            R_n(x) = \frac{1}{n!}\int_{x_0}^{x} f^{(n+1)}(t)(x - t)^n\,
+                     \mathrm{d}t
+        \end{equation}
+    \end{theorem}
+    
+    \begin{remark}
+        \begin{enumerate}[label={\rm(\arabic*)}]
+            \item 為拉格朗日型余項可以有柯西型余項的到，需要利用積分第一中值定理。
+            \item 若果將函數$\displaystyle f^{(n+1)}(t)(x - t)^n$看成一個函數，
+                利用積分第一中值定理，則有：
+                \begin{equation}
+                    \begin{split}
+                        R_n(x) & = \frac{f^{(n+1)}(\xi)(x - \xi)^n}{n!} 
+                    \int_{x_0}^{x}\, \mathrm{d}t (\xi \in (x_0, x)) \\
+                        & = \frac{f^{(n+1)}(x_0 + \theta(x - x_0))}{n!} 
+                            (1 - \theta)^n(x - x_0)^{n+1}, 0 \le \theta \le 1.
+                    \end{split}
+                \end{equation}
+        \end{enumerate}
+    \end{remark}
+
+    \subsection{初等函數的冪級數展開式}
+    \begin{example}
+        求$k$次多項式函數
+        \[
+            f(x) = c_0 + c_1 x + c_2 x^2 + \cdots + c_k x^k
+        \]
+        的展開式。
+    \end{example}
+
+    \begin{example}
+        求函數$\displaystyle f(x) = e^x$的展開式。
+    \end{example}
+
+    \begin{example}
+        求函數$\displaystyle f(x) = \sin x$的展開式。
+    \end{example}
+
+    \begin{example}
+        求函數$\displaystyle f(x) = \ln (1+x)$的展開式。
+        提示：
+        \begin{enumerate}[label={\rm(\arabic*)}]
+            \item 當$0 \le x \le 1$時使用拉格朗日型余項，有
+                \[
+                    \begin{split}
+                        \left| R_n(x) \right| &  = 
+                        \left| \frac{1}{(n+1)!}(-1)^n 
+                        \frac{n!}{(1+\xi)^{n+1}}x^{n+1} \right| \\
+                        & = \left|\frac{(-1)^n}{n+1}\left(\frac{x}
+                        {(1+\xi)^{n+1}}\right)\right| \\
+                        & \le \frac{1}{n+1} \to 0 (n \to \infty)
+                    \end{split}
+                \]
+            \item 當$-1 < x < 0$的情形，拉格朗日型余項不易估計，改用柯西型
+                余項，有
+                \[
+                    \begin{split}
+                        \left| R_n(x) \right| & = \left| \frac{1}{n!}(-1)^n 
+                        \frac{n!}{(1+\theta x)^{n+1}}(1-\theta)^n x^{n+1}
+                        \right| \\
+                        & = \frac{1}{1+\theta x}\left(\frac{1-\theta}
+                        {1+\theta x}\right)^n\vert x \vert^{n+1}, 
+                        0 \le x \le 1.
+                    \end{split}
+                \]
+                因為$-1 < x < 0$，所以有$1 - \theta \le 1 + \theta x$.
+                即有$\displaystyle 0 \le \frac{|x|^{n+1}}{1-|x|} \to 0 
+                (n \to \infty)$.
+        \end{enumerate}
+    \end{example}
+    \begin{example}
+        討論二項式函數$f(x) = (1+x)^{\alpha}$的展開式。
+        關於收斂區間的討論(其推導過程參見菲赫金哥爾茨著《微積分教程》
+        第二卷第二份冊)：
+        \begin{enumerate}[label={\rm(\arabic*)}]
+            \item 當$\alpha \le -1$時，收斂域為$(-1,1)$;
+            \item 當$-1 < \alpha < 0$時，收斂域為$(-1,1]$;
+            \item 當$\alpha > 0$時，收斂域為$[-1, 1]$;
+        \end{enumerate}
+    \end{example}
+
+    \begin{example}
+        利用$f(x) = (1+x)^{\alpha}$的展開式，得到
+        \begin{equation}
+            \frac{1}{1+x^2} = 1 - x^2 + x^4 + \cdots + (-1)^nx^{2n} + 
+            \cdots, (-1, 1).
+        \end{equation}
+        \begin{equation}
+            \frac{1}{\sqrt{1-x^2}} = 1 + \frac{1}{2}x^2 + \frac{1 \cdot 3}
+            {2 \cdot 4}x^4 + \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}
+            x^6 + \cdots, (-1, 1)
+        \end{equation}
+        \begin{equation}
+            \begin{split}
+                \emph{arctan}x & = \int_0^x\frac{\mathrm{d}t}{1+t^2}\\
+                & = x - \frac{x^3}{3} + \frac{x^5}{5} + \cdots + 
+                (-1)^n\frac{x^{2n+1}}{2n+1} + \cdots, [-1, 1]
+            \end{split}
+        \end{equation}
+        \begin{equation}
+            \begin{split}
+                \emph{arcsin}x & = \int_0^x\frac{\mathrm{d}t}{\sqrt{1-t^2}}\\
+                & = x + \frac{1}{2}\frac{x^3}{3} + \frac{1 \cdot 3}{2 \cdot 4}
+                \frac{x^5}{5} + \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}\frac{x^7}{7} 
+                + \cdots, [-1, 1]
+            \end{split}
+        \end{equation}
+    \end{example}
+    
+    \begin{example}
+        求函數$\displaystyle f(x) = (1-x)\ln(1-x)$在$x=0$點的展開式。
+    \end{example}
+    \begin{example}
+        用間接方法求非初等函數
+        \[
+            F(x) = \int_0^x e^{-t^2}\, \mathrm{d}t
+        \]
+        的冪級數展開式。
+    \end{example}
+
 \end{CJK*}
 \end{document}
