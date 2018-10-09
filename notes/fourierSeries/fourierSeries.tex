@@ -1,0 +1,311 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{CJKutf8}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{bm}
+\usepackage{enumitem}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Examples}
+
+\begin{document}
+\title{Fourier Series and the Fourier Transform}
+\author{Guoning Wu\footnote{Email: wuguoning@163.com}\\[2ex]
+ China University of Petroleum-Beijing\\[2ex]}
+\date{2017.9}
+\maketitle
+\section{Basic General Concept Connected with Fourier Series}
+
+\subsection{Orthogonal Systems of Functions}
+    \paragraph{\rm \textbf{a. Expansion of a vector in a vector space.}}
+    During this course of analysis we have mentioned several times that 
+    certain classes of functions form vector spaces in relation to the 
+    standard arithmetic operations. Such, for example, are the basic 
+    classes of analysis, which consist of smooth, continuous, or integrable 
+    real, complex, or vector-valued functions on a domain $X \subset \mathbb{R}^n$.
+
+    In analysis, as a rule, it is necessary to consider "infinite linear
+    combinations" - series of functions of the form
+    \[
+        f = \sum_{k=1}^{\infty}\alpha_k f_k
+    \]
+    
+    The definition of the sum of the series requires that some topology (
+    in particular, a metric) be defined in the vector space in question, 
+    making it possible to judge whether the difference $f - S_n$ tends to 
+    zero or not, where $S_n = \sum_{k=1}^{n}\alpha_kf_k.$
+
+    The main device used in classical analysis to introduce a metric on
+    a vector space is to define some norm of a vector or inner product
+    of vectors in that space. We are now going to consider only spaces 
+    endowed with an inner product (which, as before, we shall denote 
+    $\langle, \rangle$)
+
+    \begin{definition}
+        \emph{
+        The vectors $\bm{x}$ and $\bm{y}$ in a vector space endowed with an 
+        inner product $\langle, \rangle$ are orthogonal (with respect to 
+        that inner product) if $\langle x, y \rangle = 0.$
+        }
+    \end{definition}
+
+    \begin{definition}
+        \emph{
+        The system of vectors $\left\{x_k: k \in K \right\}$ is orthogonal if the
+        vectors in it corresponding to different values of the index $k$
+        are pairwise orthogonal.
+        }
+    \end{definition}
+
+    \begin{definition}
+        \emph{
+        The system of vectors $\left\{e_k: k \in K \right\}$ is orthonormalized (or orthonormal)
+        if $\langle e_i, e_j \rangle = \delta_{ij}$ for every pair of indices $i,j \in K$,
+        where $\delta_{i,j}$ is the  Kronecker  symbol, that is  
+        \[
+        \delta_{i,j}  =  \left\{\begin{array}{cr}  & 1, if i=j \\ & 0, if i \ne j 
+        \end{array} \right.
+        \].
+        }
+    \end{definition}
+
+    \begin{definition}
+        \emph{
+        A finite system of vectors $x_1, x_2, \cdots , x_n$ is linearly independent 
+        if the equality $\alpha_1x_1 + \alpha_2x_2 + \cdots + \alpha_nx_n = 0$ is possible 
+        only when $\alpha_1 = \alpha_2 = \cdots = \alpha_n = 0$.
+        }
+    \end{definition}
+
+    The main question that will interest us now is the question of expanding
+    a vector in a given system of linearly independent vectors.
+
+    As is known from analytic geometry, expansions in orthogonal and 
+    orthonormal systems have many technical advantages over expansions 
+    in arbitrary linearly independent systems. In the orthogonal expansion, 
+    the coefficients of the expansion are easy to compute, it is easy to 
+    compute the inner product of two vectors from their coefficients in 
+    an orthogonal basis, and so on.
+
+
+    \subsection{Examples of Orthogonal Systems of Functions}
+    The inner product is defined as 
+    \begin{equation}
+        \langle f, g \rangle = \int_X f \cdot \overline{g}(x)\, \mathrm{d}x
+        \label{eq:eq1}
+    \end{equation}
+    on the vector space $\mathcal{R}_2(X, \mathbb{C})$ consisting of functions 
+    on the set $X \subset \mathbb{R}^n$ that are locally square-integrable.
+
+    Since $\displaystyle \vert f \cdot \overline{g} \vert \le \frac{1}{2} 
+    \left(\vert f \vert^2 + \vert g \vert^2\right)$, the integral \ref{eq:eq1}
+    converges and hence defines $\langle f, g \rangle $ unambiguously.
+
+    If we discussing real-valued functions, relations \ref{eq:eq1} is the 
+    real space $\mathcal{R}_2(x,\mathbb{R})$ reduces to the equality 
+    \begin{equation}
+        \langle f, g \rangle = \int_X \left(f \cdot g \right)(x)\, \mathrm{d}x.
+    \end{equation}
+
+    \begin{example}
+        \emph{We recall for integers $m$ and $n$}
+            \begin{equation}
+                \int_{-\pi}^{\pi} e^{imx} \cdot e^{-inx}\, \mathrm{d}x = 
+                \left\{\begin{array}{rl} 
+                    0, & \mathrm{ if } \quad m \ne n, \\
+                    2\pi, & \mathrm{ if } \quad m = n
+                \end{array}\right.
+                \label{eq:eq2}
+            \end{equation}
+
+            \begin{equation}
+                \int_{-\pi}^{\pi} \cos mx \cos nx\, \mathrm{d}x = \left\{
+                    \begin{array}{rl} 0, &  \mathrm{ if } \quad m \ne n \\
+                                    \pi, &  \mathrm{ if } \quad m = n \ne 0 \\
+                                   2\pi, &  \mathrm{ if } \quad m = n = 0
+                    \end{array} \right.
+                    \label{eq:eq3}
+            \end{equation}
+
+            \begin{equation}
+                \int_{-\pi}^{\pi} \sin mx \cos nx\, \mathrm{d}x = 0
+                    \label{eq:eq4}
+            \end{equation}
+
+            \begin{equation}
+                \int_{-\pi}^{\pi} \sin mx \sin nx\, \mathrm{d}x = \left\{
+                    \begin{array}{rl} 0, & \mathrm{ if } \quad m \ne n \\
+                                    \pi, & \mathrm{ if } \quad m = n \ne 0 \\
+                                      0, & \mathrm{ if } \quad m = n = 0
+                    \end{array} \right.
+                    \label{eq:eq5}
+            \end{equation}
+    \end{example}
+
+    These relations show that $\displaystyle \left\{e^{inx}; n \in \mathbb{Z}\right\}$ 
+    is an orthogonal system of vectors in the space $\mathcal{R}_2\left([-\pi, 
+    \pi]; \mathbb{C}\right)$ relative to the inner product \ref{eq:eq1}. 
+    The \textbf{trigonometric system} $\displaystyle \left\{1, \cos nx, \sin nx; n \in 
+    \mathbb{N}\right\}$ is orthogonal in $\mathcal{R}_2\left([-\pi, \pi]; \mathbb{R}\right)$.
+    If we allow linear combinations, then by Euler's formulas $\displaystyle e^{inx} 
+    = \cos nx + i \sin nx, \cos nx = \frac{1}{2} \left(e^{inx} + e^{-inx}\right), 
+    \sin nx= \frac{1}{2i}\left(e^{-inx} - e^{-inx}\right)$. We see that these two systems 
+    can be expressed linearly in terms of each other, that is, they are algebraically 
+    equivalent. For that reason the exponential system $\displaystyle \left\{ e^{inx};
+    n \in \mathbb{Z} \right\}$ is called the trigonometric system or more precisely 
+    the trigonometric system in complex notation.
+
+    If the closed interval $[-\pi, \pi]$ is replaced by an arbitrary 
+    closed interval $[-l, l] \subset \mathbb{R}$, then by a change of 
+    variable one can obtain the analogous systems 
+    $\displaystyle \left\{e^{i\frac{\pi}{l}nx; n \in \mathbb{Z}}\right\}$
+    and $\displaystyle \left\{1, \cos \frac{\pi}{l}nx, \sin \frac{\pi}{l}nx; 
+    n \in \mathbb{N}\right\}$, which are orthogonal in the space 
+    $\left(\mathcal{R}_2([-l, l]),\mathbb{C}\right)$ and $\displaystyle 
+    \left(\mathcal{R}_2([-l, l]), \mathbb{R}\right)$
+    and also the corresponding orthonormal systems 
+    \[
+        \left\{\frac{1}{\sqrt{2l}}e^{i\frac{\pi}{l}nx}; n \in \mathbb{Z}\right\}
+    \]
+    \[
+        \left\{\frac{1}{\sqrt{2l}}, \frac{1}{\sqrt{l}}\cos \frac{\pi}{l}nx, 
+        \frac{1}{\sqrt{l}}\cos \frac{\pi}{l}nx \right\}
+    \]
+
+    \begin{example}
+        Let $I_x$ be an interval in $\mathbb{R}^m$ and $I_y$ an interval 
+        in $\mathbb{R}^n$, and let $f_i(x)$ be an orthogonal system of 
+        functions in $\mathcal{R}_2(I_x, \mathbb{R})$ and $g_j(y)$ an 
+        orthogonal system of functions in $\mathcal{R}_2(I_y, \mathbb{R})$.
+        Then, the system of functions $\displaystyle \left\{u_{ij}(x,y) = 
+        f_i(x)g_j(y)\right\}$ is orthogonal in $\mathcal{R}_2(I_x \times I_y, \mathbb{R})$.
+    \end{example}
+
+    \subsection{Orthogonalization}
+    The Gram-Schmidt orthogonalization 
+    \begin{enumerate}[label={\rm(\arabic*)}]
+        \item $\displaystyle \varphi_1 = \frac{\psi_1}{\|\psi_1\|}$
+        \item $\displaystyle \varphi_2 = \frac{\psi_2 - 
+               \langle \psi_2, \varphi_1\rangle \varphi_1}
+               {\|\psi_2 - \langle \psi_2, \varphi_1\rangle \varphi_1\|}$
+            \[\displaystyle \cdots\]
+        \item $\displaystyle \varphi_n = \frac{\psi_2 - 
+            \sum_{k=1}^{n-1}\langle \psi_n, \varphi_k\rangle \varphi_k}
+               {\|\psi_2 - \langle \psi_n, \varphi_k\rangle \varphi_k\|}$
+    \end{enumerate}
+
+    \begin{example}
+        The process of orthogonalizing the linear independent system 
+        \[
+            1, x, x^2, \cdots 
+        \]
+        in $\displaystyle \mathcal{R}_2([-1,1], \mathbb{R})$
+        leads to the system of orthogonal polynomials known 
+        as the \textbf{Legendre polynomials},
+        \[
+            P_n(x) = \frac{1}{n!2^n}\frac{{\mathrm{d}}^n\left(
+            x^2-1\right)^n}{\mathrm{d}x^n}
+        \]
+        The orthonormalized Legendre polynomials have the form 
+        \[
+            \widehat{P}_n(x) = \sqrt{\frac{2n+1}{2}}P_n(x)
+        \]
+    \end{example}
+    
+    \section{Fourier Series and Fourier Coefficients}
+    \subsection{Definition of the Fourier Coefficients and the Fourier Series}
+    Let $\left\{e_i\right\}$ be an orthonormal system and 
+    $\left\{l_i\right\}$ be an orthogonal system of vectors in a 
+    space $X$ with inner product $\langle, \rangle$. 
+
+    Suppose that $\displaystyle x = \sum x^il_i$, the coefficient 
+    $x^i$ in this expansion of the vector x can be found:
+    \[
+        x^i = \frac{\langle x, l_i\rangle}{\langle l_i, l_i \rangle}
+    \]
+    If $l_i = e_i$, the expansion become even simple:
+    \[
+        x^i = \langle x, e_i \rangle
+    \]
+    \begin{definition}
+        The number $\displaystyle \left\{\frac{\langle x, l_i \rangle}
+        {\langle l_i, l_i \rangle}\right\}$ are the \textbf{Fourier 
+        coefficients} of the vector $x \in X$ in the orthogonal system 
+        $\displaystyle \left\{l_i\right\}$.
+    \end{definition}
+
+    \begin{definition}
+        If $X$ is a vector space with inner product $\langle, \rangle$ 
+        and $\displaystyle l_1, l_2, \cdots, \l_n, \cdots$ is an 
+        orthogonal system of nonzero vectors in $X$, then for each 
+        vector $x \in X$ one can form the series 
+        \begin{equation}
+            x \sim \sum_{k=1}^{\infty} \frac{\langle x, l_k \rangle}
+            {\langle l_k, l_k \rangle}l_k
+            \label{eq:eq6}
+        \end{equation}
+    \end{definition}
+    
+    This series is the \textbf{Fourier series} of $x$ in the orthogonal 
+    system $\left\{l_k\right\}$. In the case of orthonormal system 
+    $\displaystyle \left\{e_k\right\}$ the Fourier series of a vector 
+    $x \in X$ ha a particular simple expression:
+    \begin{equation}
+        x \sim \sum_{k=1}^{\infty} \langle x, e_k \rangle e_k
+        \label{eq:eq7}
+    \end{equation}
+
+    \begin{example}
+        Let $f(x) \in X = \mathcal{R}_2([-\pi, \pi], \mathbb{R})$ 
+        there corresponds a Fourier series 
+        \[
+            f(x) \sim \frac{a_0(f)}{2} + \sum_{k=1}^{\infty}a_k(f)\cos kx 
+                               + b_k(f)\sin kx 
+        \]
+        in this system. The Fourier coefficients are defined as:
+        \begin{equation}
+            a_k(f) = \frac{1}{\pi}\int_{-\pi}{\pi}f(x)\cos kx\, 
+            \mathrm{d}x, k = 0, 1, 2, \cdots
+            \label{eq:eq8}
+        \end{equation}
+        \begin{equation}
+            b_k(f) = \frac{1}{\pi}\int_{-\pi}{\pi}f(x)\sin kx\, 
+            \mathrm{d}x, k = 0, 1, 2, \cdots
+            \label{eq:eq9}
+        \end{equation}
+    \end{example}
+
+    \begin{example}
+        Let us consider the orthogonal system $\displaystyle \left\{
+            e^{ikx}, k \in \mathbb{Z}\right\}$ in the space 
+        $\displaystyle \mathcal{R}_2([-\pi, \pi], \mathbb{C})$.
+        Let $\displaystyle f(x) \in \mathcal{R}_2([-\pi, \pi], \mathbb{C})$, 
+        then the coefficients 
+        \[
+            c_k(f) = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-ikx}\,
+            \mathrm{d}x
+        \]
+        It can be proved that 
+        \begin{equation}
+            c_k = \left\{ \begin{array}{cc} 
+            \frac{1}{2}(a_k - ib_k), & \mathrm{ if } k \ge 0 \\
+            \frac{1}{2}(a_{-k} + ib_{-k}), & \mathrm{ if } k < 0 
+            \end{array}\right.
+        \end{equation}
+    \end{example}
+
+
+
+
+\end{document}
