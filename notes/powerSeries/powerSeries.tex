@@ -327,6 +327,46 @@
                      \mathrm{d}t
         \end{equation}
     \end{theorem}
+
+    \begin{proof}
+        由表達式
+        \[
+            r_n(x) = f(x) - \sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x - x_0)^k
+        \]
+         出發，逐次對兩段求導數，可得到：
+        \[
+            r'_n(x) = f'(x) - \sum_{k=1}^{n}\frac{f^{(k)}(x_0)}{(k-1)!}(x - x_0)^{k-1}
+        \]
+        \[
+            r''_n(x) = f''(x) - \sum_{k=2}^{n}\frac{f^{(k)}(x_0)}{(k-2)!}(x - x_0)^{k-2}
+        \]
+        \[
+            \cdots
+        \]
+        \[
+            r_n^{(n)}(x) = f^{(n)}(x) - f^{(n)}(x_0)
+        \]
+        \[
+            r_n^{(n+1)}(x) = f^{(n+1)}(x) 
+        \]
+        令$x = x_0$, 有
+        \[
+            r_n(x_0) = r'_n(x_0) = r''_n(x_0) = \cdots = r_n^{(n)}(x_0) = 0
+        \]
+        逐次積分，有
+        \[
+            \begin{split}
+                r_n(x) & = r_n(x) - r_n(x_0) = \int_{x_0}^{x}r'(t)\,\mathrm{d}t \\
+                       & = \int_{x_0}^{x}r'(t)\,\mathrm{d}(t - x) \\
+                       & = \int_{x_0}^{x}r''(t)(x - t)\,\mathrm{d}t \\
+                       & \cdots \\
+                       & = \frac{1}{n!}\int_{x_0}^{x}r_n^{(n+1)}(t)(x - t)^n\, 
+                           \mathrm{d}t \\
+                       & = \frac{1}{n!}\int_{x_0}^{x}f^{(n+1)}(t)(x - t)^n\, 
+                           \mathrm{d}t 
+            \end{split}
+        \]
+    \end{proof}
     
     \begin{remark}
         \begin{enumerate}[label={\rm(\arabic*)}]
@@ -365,7 +405,7 @@
         求函數$\displaystyle f(x) = \ln (1+x)$的展開式。
         提示：
         \begin{enumerate}[label={\rm(\arabic*)}]
-            \item 當$0 \le x \le 1$時使用拉格朗日型余項，有
+            \item 當$0 \le x \le 1$時使用\textbf{拉格朗日型余項}，有
                 \[
                     \begin{split}
                         \left| R_n(x) \right| &  = 

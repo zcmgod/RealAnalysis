@@ -42,8 +42,8 @@ three questions:
 \subsection{Definitions and Examples}
 We recall the following definition.
 \begin{definition}
-    A function $f: \mathbb{N} \to X$ whose domain of definition is the set of 
-    natural numbers is called a \textit{sequence}.
+    \emph{A function $f: \mathbb{N} \to X$ whose domain of definition is the set of 
+    natural numbers is called a \textbf{sequence}.}
 \end{definition}
 
 The values $f(n)$ of the function $f$ are called the terms of the sequence. We 
@@ -53,10 +53,12 @@ and also written as $x_1, x_2, \cdots , x_n \cdots $. It is called a sequence in
 The element $x_n$ is called the \textit{nth term of the sequence}.
 
 \begin{definition}
-    A number $A \in \mathbb{R}$ is called the \textit{limit of the numerical sequence}
+    \emph{
+    A number $A \in \mathbb{R}$ is called the \textbf{limit of the numerical sequence}
      $\{x_n\}$ if for every neighborhood $V(A)$ of $A$ there exists an index $N$
     (depending on $V(A)$) such that all terms of the sequence having index larger 
     than $N$ belong to the neighborhood $V(A)$.
+    }
 \end{definition}
 
 We now write these formulations of the definitions of a limit in the 
@@ -65,8 +67,10 @@ language of symbolic logic.
 and respectively
 \[\lim_{n \to \infty } = A := \forall \epsilon >0, \exists N\in \mathbb{N}, \forall n>N, |x_n - A|<\epsilon\].
 \begin{definition}
+    \emph{
     If $\displaystyle \lim_{n \to \infty} x_n = A$, we say the sequence $\{x_n\}$ 
     converges to $A$ and writes $x_n \to A$ as $n \to \infty$.
+    }
 \end{definition}
 
 A sequence having a limit is said to be convergent. A sequence that does not 
@@ -89,11 +93,15 @@ Let us consider some examples.
     $\displaystyle \lim_{n \to \infty} \frac{1}{q^n} = 0, {\rm if } |q|>1.$
 \end{example}
 \begin{example}
+    \emph{
     The sequence $1, 2, \frac{1}{3}, 4, \frac{1}{5}, \cdots$ whose $n$
     term is $\displaystyle x_n = n^{(-1)^n}$ is divergent. 
+    }
 \end{example}
 \begin{example}
+    \emph{
     The sequence $1, -1, 1, -1, \cdots$ for which $x_n = (-1)^n$, has no limit.
+    }
 \end{example}
 \begin{example}
     $\displaystyle \lim_{n \to \infty} \frac{1}{n^{\alpha}} = 0. (\alpha>0)$
@@ -105,31 +113,36 @@ Let us consider some examples.
 \subsection{Properties of the Limit of a Sequence}
 \subsubsection{General Properties}
 \begin{definition}
+    \emph{
     If there exists a number $A$ and an index $N$ such that $x_n = A$
     for all $n>N$, the sequence $\{x_n\}$ will be called ultimately 
     constant.
+    }
 \end{definition}
 \begin{definition}
+    \emph{
     A sequence $\{x_n\}$ is bounded if there exists $M$ such that $|x_n| < M$
     for all $n \in M$.
+    }
 \end{definition}
 
 \begin{theorem}
+    \emph{
     1) An ultimately constant sequence converges.
-
     2) Any neighborhood of the limit of a sequence contains all but 
     a finite number of terms of the sequence.
-
     3) A convergent sequence cannot have two different limits.
-
     4) A convergent sequence is bounded.
+    }
 \end{theorem}
 
 \subsubsection{Passage to the Limit and the Arithmetic Operation}
 \begin{definition}
+    \emph{
     If $\{x_n\}$ and $\{y_n\}$ are two numerical sequences,their sum, 
     product, and quotient are the sequences
     \[\{x_n+y_n\}, \{x_n \cdot y_n\}, \left\{\frac{x_n}{y_n}\right\}\]
+    }
 \end{definition}
 The quotient, of course, is defined only when $y_n\ne 0$ for all $n \in N$.
 
@@ -147,9 +160,11 @@ The quotient, of course, is defined only when $y_n\ne 0$ for all $n \in N$.
 
 \subsubsection{Passage to the Limit and Inequalities}
 \begin{theorem}
+    \emph{
     {\rm a) } Let $\{x_n\}$ and $\{y_n\}$ be numerical sequences. If $\displaystyle \lim_{n\to \infty}
     x_n =A$ and $\displaystyle \lim_{n\to \infty} y_n =B$. If $A < B$, then there exists an 
     index $N \in \mathbb{N}$ such that $x_n < y_n$  for all $n > N$.
+    }
 \end{theorem}
 \begin{corollary}
     Suppose $\displaystyle \lim_{n\to \infty}
@@ -168,12 +183,16 @@ The quotient, of course, is defined only when $y_n\ne 0$ for all $n \in N$.
 \subsubsection{Questions Involving the Existence of the Limit of a Sequence}
 \paragraph{{\rm \textbf{ a. The Cauchy Criterion}}}
 \begin{definition}
-    A sequence ${x_n}$ is called a \textit{fundamental or Cauchy} sequence 
+    \emph{
+    A sequence ${x_n}$ is called a \textbf{fundamental or Cauchy} sequence 
     if for any $\epsilon > 0$ there exists an index $N \in \mathbb{N}$
     such that $|x_m - x_n| < \epsilon$ whenever $n > N$ and $m > N$.
+    }
 \end{definition}
 \begin{theorem}{(Cauchy's convergence criterion)}
+    \emph{
     A numerical sequence converges if and only if it is a Cauchy sequence.
+    }
 \end{theorem}
 \begin{proof}
     \[a_n := \inf_{k\ge n} x_k\]

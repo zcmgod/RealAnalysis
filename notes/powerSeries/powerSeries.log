@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  27 SEP 2018 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=latex 2015.5.24)  7 OCT 2018 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -589,18 +589,23 @@ LaTeX Font Warning: Font shape `C70/bsmi/m/it' undefined
 
 [1
 
-] [2] [3] [4] [5] [6] [7] [8] [9] (./powerSeries.aux)
+] [2] [3] [4] [5] [6] [7]
+
+LaTeX Font Warning: Font shape `C70/bsmi/bx/it' undefined
+(Font)              using `C70/bsmi/bx/n' instead on input line 408.
+
+[8] [9] [10] (./powerSeries.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4642 strings out of 493090
- 58396 string characters out of 6134868
+ 4670 strings out of 493090
+ 58903 string characters out of 6134868
  211268 words of memory out of 5000000
- 7970 multiletter control sequences out of 15000+600000
- 38808 words of font info for 140 fonts, out of 8000000 for 9000
+ 7997 multiletter control sequences out of 15000+600000
+ 39167 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,17n,43p,223b,1148s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,17n,43p,223b,1150s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on powerSeries.dvi (9 pages, 26280 bytes).
+Output written on powerSeries.dvi (10 pages, 28696 bytes).
